@@ -1,0 +1,106 @@
+@media screen and (max-width: 1400px) {
+  body footer .flex .sponsor img {
+    width: 90%;
+  }
+  body footer .copy-right p {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  body header .navbar .container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navbar-toggler {
+    position: relative;
+    top: -2px;
+  }
+  body footer .box {
+    padding: 0;
+    text-align: center;
+  }
+  body footer .box .line {
+    display: none;
+  }
+  body footer .box .social {
+    display: none;
+  }
+  body footer .flex {
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+  }
+  body header .navbar {
+    padding: 12px 0;
+  }
+  body header .navbar-toggler {
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+    border: none !important;
+  }
+  body header .nav-item {
+    margin-top: 20px;
+    text-align: center;
+  }
+  body header .nav-item.active {
+    background-color: #fff;
+    border: none !important;
+  }
+  body header .nav-item.active .nav-link {
+    color: #000;
+    border: none !important;
+  }
+  body main section .gallery-section .gallery-box img {
+    width: 96%;
+  }
+  body main section .contact-us-section .box .form-control {
+    width: 100%;
+  }
+  body main section .contact-us-section .box .btn-red {
+    width: 100%;
+  }
+  body main section .contact-us-section .box .address div {
+    margin: 57px 0;
+  }
+  body main section .gallery-section .dots2 {
+    right: 314px;
+  }
+  body main section .video-section video {
+    width: 100%;
+  }
+  body main section .gallery-title-section .title p {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body main section .gallery-section .big .gallery-box {
+    display: block;
+  }
+  body main section .gallery-section .big .gallery-box img {
+    width: 100%;
+  }
+  body main section .gallery-section .dots2 {
+    right: auto;
+    top: -52px;
+    left: 43px;
+  }
+  body main section .contact-us-section .box .address div address {
+    display: inline-block;
+    width: 80%;
+    vertical-align: text-top;
+    line-height: 24px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  body footer .menu li {
+    display: block;
+  }
+  body footer .copy-right p {
+    font-size: 15px;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */

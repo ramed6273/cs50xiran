@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="/static/style.css" />
+
+<section>
+    <div class="sign-up-section text-center">
+        <div class="container">
+            <div class="icon">
+                <div class="top">
+                    <img src="/static/web/images/icon user.png" alt="" />
+                    <span> ثبت نام </span>
+                </div>
+                <div class="bottom text-end">
+                    <div class="bottom-center">
+                        <form action="/payment" method="post" id="payment-form" onsubmit="return on_submit(this)">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">نام</label>
+                                <input type="text" class="form-control" name="firstname[]" onkeyup="this.parentElement.querySelector('.error').style.display = 'none'" />
+                                <div class="text-danger error"><small>لطفا نام خود را با حروف فارسی وارد نمایید</small></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">نام خانوادگی</label>
+                                <input type="text" class="form-control" name="lastname[]" onkeyup="this.parentElement.querySelector('.error').style.display = 'none'" />
+                                <div class="text-danger error"><small>لطفا نام خانوادگی خود را با حروف فارسی وارد نمایید</small></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">ایمیل</label>
+                                <input id="email" type="email" class="form-control" name="email[]" onkeyup="this.parentElement.querySelector('.error').style.display = 'none'" />
+                                <div class="text-danger error"><small>لطفا ایمیل خود را وارد نمایید</small></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">شماره تلفن همراه</label>
+                                <input type="number" class="form-control" name="number[]" onkeyup="this.parentElement.querySelector('.error').style.display = 'none'" />
+                                <div class="text-danger error"><small>لطفا شماره تلفن همراه خود را وارد نمایید</small></div>
+                            </div>
+
+                            <div id="extra-fields">
+                            </div>
+
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <input type="text" class="form-control last d-inline-block total-price" placeholder="مجموع قیمت " aria-label="مجموع قیمت " value="{{ product.price }} تومان" disabled="true" />
+                                </div>
+                                <div class="coupon-input">
+                                    <div class="input-group mb-3">
+                                        <input type="text" name="coupon" id="coupon" class="form-control sale" placeholder="اعمال کد تخفیف" aria-label="اعمال کد تخفیف" aria-describedby="basic-addon1" onkeyup="this.parentElement.parentElement.querySelector('.error').style.display = 'none'" />
+                                        <button class="input-group-text" id="basic-addon1" onclick="check_coupon(this); return false">
+                                            <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M21.1666 5.33341L16.5 10.0001H20C20 13.8617 16.8616 17.0001 13 17.0001C11.8216 17.0001 10.7016 16.7084 9.73329 16.1834L8.02996 17.8867C9.46496 18.7967 11.1683 19.3334 13 19.3334C18.1566 19.3334 22.3333 15.1567 22.3333 10.0001H25.8333L21.1666 5.33341ZM5.99996 10.0001C5.99996 6.13841 9.13829 3.00008 13 3.00008C14.1783 3.00008 15.2983 3.29175 16.2666 3.81675L17.97 2.11341C16.535 1.20341 14.8316 0.666748 13 0.666748C7.84329 0.666748 3.66663 4.84341 3.66663 10.0001H0.166626L4.83329 14.6667L9.49996 10.0001H5.99996Z"
+                                                    fill="white"
+                                                />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="text-success success"><small>کد تخفیف اعمال شد</small></div>
+                                    <div class="text-danger error"><small>کد تخفیف نامعتبر می باشد</small></div>
+                                </div>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" oninvalid="this.setCustomValidity('لطفا شرایط و ضوابط را قبول کنید')" onclick="setCustomValidity('')" required />
+                                <label class="form-check-label" for="flexCheckDefault"> <a href="#">شرایط و ضوابط</a> را حتما قبل از ثبت نام در یکی از دوره ها مطالعه کنید. </label>
+                            </div>
+                            <div class="text-center">
+                                <a href="#">
+                                    <button class="right" id="payment-btn">ثبت نام و خرید</button>
+                                </a>
+                                <a href="#">
+                                    <button class="left" id="group-btn" onclick="addFields(); return false">ثبت نام گروهی</button>
+                                </a>
+                            </div>
+
+                            <input name="product" type="hidden" value="{{ product.type }}" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript">const price = {{ product.price }}; const discount = {{ discount.amount }};</script>
+<script src="/static/script.js"></script>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fa">
+    <head>
+        <!-- Meta Tags -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="theme-color" content="" />
+        <!-- Title -->
+        <title></title>
+        <!-- Bootstrap CSS -->
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" /> -->
+        <link rel="stylesheet" href="/static/main/css/bootstrap.min.css" />
+        <!-- Theme CSS -->
+       <!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css" /> -->
+        <link rel="stylesheet" href="/static/main/css/splide.min.css" />
+        <link rel="stylesheet" href="/static/main/css/style.css?v=1.5" />
+        <link rel="stylesheet" href="/static/main/css/responsive.css?v=1.5" />
+       <!---start GOFTINO code--->
+<script type="text/javascript">
+  !function(){var i="i3Rl9r",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();
+</script>
+<!---end GOFTINO code--->
+    </head>
+    <body>
+        {% include "./header.html" %}
+
+
+        <div class="container" style="padding: 300px">
+
+            {% if is_success %}
+                <center><img src="/static/payment/success.svg"></center>
+                <h2 class="text-center">خرید شما با موفقیت انجام شد</h2><br />
+            {% else %}
+                <center><img  src="/static/payment/error.svg"></center>
+
+
+
+                <h2 class="text-center">متاسفانه خرید انجام نشد</h2><br />
+            {% endif %}
+            <div class="row" style="border-radius: 8px;background-color: #F1F1F1; width: 674px; height: 42px;">
+                <div class="col-md-6 mt-3 text-center" >نوع خرید:</div>
+                <div class="col-md-6 mt-3 text-center">{{ type }}</div>
+            </div><br />
+        <div class="row" style="border-radius: 8px;background-color: #F1F1F1; width: 674px; height: 42px;">
+            <div class="col-md-6"><p class="text-center mt-3">زمان خرید:</p>
+                </div>
+            <div class="col-md-6">
+                <p class="text-center mt-3">{{ date }}</p>
+            </div>
+        </div><br />
+        <div class="row" style="border-radius: 8px;background-color: #F1F1F1; width: 674px; height: 42px">
+            <div class="col-md-6">
+                <p class="text-center mt-3">کد پیگیری: </p>
+            </div>
+            <div class="col-md-6">
+                <p class="text-center mt-3"> {{ track_number }}</p>
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-md-3"></div>
+
+            <div class="col-md-4">
+            <a href="/"><button class="btn btn-right" style="background-color: #A51C30; color: white; border-radius: 16px; width: 268px; height: 53px;"><b>بازشگت به صفحه قبل</b></button></a>
+                </div>
+            <div class="col-md-3"></div>
+        </div>
+
+
+
+
+        </div>
+
+
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 order-lg-1 order-2">
+                        <ul class="menu">
+                            <li><a href="">ورود</a></li>
+                            <li><a href="">تیم ما</a></li>
+                            <li><a href="">درباره ما</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 text-center order-lg-2 order-1">
+                        <img src="/static/main/images/logo2.png" alt="" />
+                        <div class="line"></div>
+                        <div class="text-center">
+                            <h4>حامیان</h4>
+                        </div>
+                        <div class="flex mt-4">
+                            <div class="sponsor"><img src="/static/main/images/Rectangle 1181.png" alt="" /></div>
+                            <div class="sponsor"><img src="/static/main/images/Rectangle 1181.png" alt="" /></div>
+                            <div class="sponsor"><img src="/static/main/images/Rectangle 1181.png" alt="" /></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 order-lg-3 order-3">
+                        <div class="box">
+                            <h4>ارتباط با ما</h4>
+                            <div class="flex justify-content-start mt-3">
+                                <div><img src="/static/main/images/sr.png" alt="" /></div>
+                                <div class="me-2"><img src="/static/main/images/sr1.png" alt="" /></div>
+                            </div>
+                            <div class="flex justify-content-start mt-3">
+                                <div><img src="/static/main/images/sr.png" alt="" /></div>
+                                <div class="me-2"><img src="/static/main/images/sr1.png" alt="" /></div>
+                            </div>
+                            <div class="line"></div>
+                            <ul class="social">
+                                <li>
+                                    <a href=""><img src="/static/main/images/social/twitter.png" alt="" /></a>
+                                </li>
+                                <li>
+                                    <a href=""><img src="/static/main/images/social/facebook.png" alt="" /></a>
+                                </li>
+                                <li>
+                                    <a href=""><img src="/static/main/images/social/instagram.png" alt="" /></a>
+                                </li>
+                                <li>
+                                    <a href=""><img src="/static/main/images/social/twitter-1.png" alt="" /></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="copy-right">
+                    <p>تمامی حقوق در سی اس فیفتی ایران محفوظ می باشد</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="/static/main/js/splide.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script> -->
+        <script src="/static/main/js/popper.min.js"></script>
+        <script src="/static/main/js/bootstrap.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> -->
+        <script src="/static/main/js/main.js?v=1.5"></script>
+        <!-- /scripts -->
+    </body>
+</html>

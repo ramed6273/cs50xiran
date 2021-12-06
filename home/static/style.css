@@ -1,0 +1,41 @@
+.round-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.delete {
+    position: static;
+    color: white;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    margin-right: 0;
+    margin-left: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #a51c30;
+}
+
+.delete:hover {
+    background: #a85360;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.error, .success {
+    display: none;
+}
