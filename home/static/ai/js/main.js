@@ -19,8 +19,8 @@ window.addEventListener("load", () => {
   let totalSeconds = 0;
 
   // let futureDate = new Date();
-  let futureDate = new Date('Tue Dec 05 2022 10:49:43 GMT+03:30');
-
+  let futureDate = new Date('Tue Dec 31 2021 00:00:01 GMT+03:30');
+  // futureDate.setDate(futureDate.getDate() + 14);
   function init() {
     totalSeconds = Math.floor((futureDate - new Date()) / 1000);
     setTimeLeft();

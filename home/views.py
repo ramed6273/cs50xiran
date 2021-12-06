@@ -13,21 +13,21 @@ import json
 
 # Main Views
 def web(request):
+    setting_web = Setting_Web.objects.first()
     product = Product.objects.get(type='web')
     return render(request, 'home/web/index.html', {
         'product': product,
-        'discount': Discount.objects.get(product=product)
+        'discount': Discount.objects.get(product=product),
+        'setting_web' : setting_web
     })
 
 def ai(request):
     setting_ai = Setting_AI.objects.first()
-    setting_ai_faq = Setting_AI_Faq.objects.all()
     product = Product.objects.get(type='ai')
     return render(request, 'home/ai/index.html', {
         'product': product,
         'discount': Discount.objects.get(product=product),
-        'setting_ai' : setting_ai,
-        'setting_ai_faq' : setting_ai_faq
+        'setting_ai' : setting_ai
 
     })
 

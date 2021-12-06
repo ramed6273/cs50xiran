@@ -125,12 +125,7 @@ class Setting_AI(models.Model):
         verbose_name = 'تنظیمات لندینگ هوش مصنوعی'
         verbose_name_plural = 'مدیریت تنظیمات لندینگ هوش مصنوعی'
 
-class Setting_AI_Faq(models.Model):
-    question = models.CharField(verbose_name='سوال متداول', max_length=1000, blank=True, default=False)
-    answer = models.CharField(verbose_name='پاسخ سوال متداول', max_length=1000, blank=True, default=False)
-    class Meta:
-        verbose_name = 'تنظیمات سوالات متداول لندینگ هوش مصنوعی'
-        verbose_name_plural = 'مدیریت تنظیمات سوالات متداول لندینگ هوش مصنوعی'
+
 
 # Landing Android
 class Setting_Android(models.Model):
