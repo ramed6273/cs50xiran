@@ -1,4 +1,5 @@
 # cs50xiran
+ابتدا یک محیط مجازی (virtual enviroment) با دستور pip install virtualenv می سازیم.
 با دستور
 pip install -r requirements.txt
 تمامی کتاب خانه ها نصب می شود.
