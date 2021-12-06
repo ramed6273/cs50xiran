@@ -27,7 +27,7 @@ HASHID_FIELD_SALT = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['cs50x.ir/winter', 'www.cs50x.ir/winter']
 
 
 # Application definition
