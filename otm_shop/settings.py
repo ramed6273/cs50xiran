@@ -143,7 +143,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ZARINPAL_CALLBACK_URL = "http://127.0.0.1/validate_payment"
+ZARINPAL_CALLBACK_URL = "http://cs50x.ir/winter/validate_payment"
 
 ZARINPAL_VERIFY_TRANSACTION_VIEW = ZARINPAL_CALLBACK_URL
 
