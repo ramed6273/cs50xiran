@@ -923,7 +923,7 @@ body main section .person-course-section .row {
 body main section .person-course-section .row span {
   display: block;
   margin-top: 30px;
-  font-size: 20px;
+  font-size: 16px;
   font-family: "dana-bold";
 }
 
@@ -1288,7 +1288,7 @@ body main section .our-group-section .overlay {
 
 body main section .our-group-section .overlay .icon {
   position: absolute;
-  top: -4px;
+  top: 1px;
 }
 
 body main section .our-group-section .text {
