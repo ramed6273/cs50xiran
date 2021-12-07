@@ -27,7 +27,7 @@ HASHID_FIELD_SALT = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cs50x.ir/winter', 'www.cs50x.ir/winter']
+ALLOWED_HOSTS = ['cs50x.ir', 'www.cs50x.ir', 'cs50x.ir/winter', 'www.cs50x.ir/winter', 'localhost']
 
 
 # Application definition
@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'otm_shop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cs50',
+        'NAME': 'cs50x',
         'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'PASSWORD': 'sfjlkjIUOILUOIRUEROI8098039UOUsfjlkjIUOILUOIRUEROI8098039UOU',
+        'HOST': 'mariadb',
         'PORT': '3306',
         'OPTIONS' : {
             'sql_mode' : 'STRICT_ALL_TABLES'
@@ -123,7 +123,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'fa-ir'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True
 
@@ -134,9 +134,11 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
+STATICFILES_DIRS = ['/my_app_dir/static',   os.path.join(BASE_DIR, 'static/')]
+STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-STATIC_URL = '/static/'
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+# STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -154,3 +156,5 @@ ZARINPAL_MERCHANT_ID = "de532b57-0df0-45c5-8047-3143502165bb"
 SIGNAL_NUMBER = "50002910020004"
 
 SIGNAL_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjdiYzEzNjc5NzlkMjM3MjFiZDZmNzlkOGEwNWMzMDgzZjdhMjNhMzE2ZGVjZDMzY2Q5ODRmNDQ1MzRjMDM2YWNmNzJkMzJiYjMzZjI2YzE2In0.eyJhdWQiOiIxIiwianRpIjoiN2JjMTM2Nzk3OWQyMzcyMWJkNmY3OWQ4YTA1YzMwODNmN2EyM2EzMTZkZWNkMzNjZDk4NGY0NDUzNGMwMzZhY2Y3MmQzMmJiMzNmMjZjMTYiLCJpYXQiOjE2Mzg2MzY4NDEsIm5iZiI6MTYzODYzNjg0MSwiZXhwIjoxNjcwMTcyODQxLCJzdWIiOiI4ODc4Iiwic2NvcGVzIjpbXX0.bcLJBAXbwrx4Btj811CJcYVBbirbeSOvFM2xax4P-x4PLAKfsAiG_VPr5Z7OY3QSDxva8BiDVj3XWK_I3jESh43hcCEDztandVHi5l57-JZuNU_IkQ8iYzGtiNkS5S57qnYrZNYIuWQd5UejsCLN8mu2fi7JhQfaHD-9bSEIq4xJUGPHhuJN1awfEu9p5A5YOi7abF7tiaWG2WXjK4QSHDTw8pJRHgD3qZfC1L0KDqdHgQyIuDpEhJcM3-aJZpWtM0amrw7gsFI5C8xXcCQ5UTvhXMhnlj-vdTsy8HSG-4wG_SM7hNMhleiFhCMJ6urpZXJUzDMR9W2w6rd3YAsELP4iv_xqT2DjDAwks5u9IwrVsuI-ugtGajj6f4KZkNiUiDYaDBZROpuaepgA59nxYKW1utiPpkSIqpGbKZuKtHfxTPMxxEbpBPYqNmlJ4YT_U2L17Nmkqs6-46Jr2b4Sf3iD0jfXCUBxbabwKlZqzVL2H1030l4rydy1oPpg1t8IMMZSoYX9i_Tq9597y81h4kiJYfsmVeAbD_8kF7sfNDHYepRfh0NvIM3D3vVaq-ZbIUvjCS_O1O0a_gAfGieJgqQg7hz3cNAOWRj6cKldAYCbaDp-XmTEserGNoJhYEviEwoSsA48RB0wiiYc3aOp8rPY6jAClnMjByQ3Mst95bM"
+SE_X_FORWARDED_HOST = True
+FORCE_SCRIPT_NAME = '/winter'

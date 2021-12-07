@@ -122,3 +122,17 @@ class Setting_WebAdmin(admin.ModelAdmin):
                      'left_course_price']
 
 admin.site.register(Setting_Web, Setting_WebAdmin)
+
+
+class Setting_PackAdmin(admin.ModelAdmin):
+    list_display = ['id', 'course_title', 'course_description', 'left_button', 'right_button', 'title_of_document', 'david_video_title_under_register',
+                    'david_video_description_under_register', 'course_feature_title1', 'course_feature_description1', 'course_feature_title2',
+                    'course_feature_description2', 'course_feature_title3', 'course_feature_description3', 'course_feature_title4', 'course_feature_description4',
+                    'course_topic', 'course_under_description1', 'course_under_description2', 'course_web_title', 'course_web_description1', 'course_web_description2', 'course_web_description3',
+                    'course_web_description4', 'course_android_title', 'course_android_description1', 'course_android_description2', 'course_android_description3',
+                    'course_android_description4', 'course_ai_title', 'course_ai_description1', 'course_ai_description2', 'course_ai_description3', 'course_ai_description4',
+                    'first_teacher_name', 'first_teacher_description', 'first_teacher_button', 'second_teacher_name', 'second_teacher_description',
+                    'second_teacher_button', 'third_teacher_name', 'third_teacher_description', 'third_teacher_button']
+
+
+admin.site.register(Setting_Pack, Setting_PackAdmin)

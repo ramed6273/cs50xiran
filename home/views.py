@@ -41,10 +41,12 @@ def android(request):
     })
 
 def pack(request):
+    setting_pack = Setting_Pack.objects.first()
     product = Product.objects.get(type='pack')
     return render(request, 'home/pack/index.html', {
         'product': product,
-        'discount': Discount.objects.get(product=product)
+        'discount': Discount.objects.get(product=product),
+        'setting_pack' : setting_pack
     })
 
 def about_us(request):

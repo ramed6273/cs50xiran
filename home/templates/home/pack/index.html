@@ -1,18 +1,7 @@
 <!DOCTYPE html>
 <html lang="fa">
     <head>
-        <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PDVRG9Z');</script>
-<!-- End Google Tag Manager -->
-Additionally, paste this code immediately after the opening <body> tag:
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDVRG9Z"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
         <!---start GOFTINO code--->
         <script type="text/javascript">
             !function(){var i="i3Rl9r",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();
@@ -43,17 +32,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="row">
                             <div class="col-lg-6 order-lg-1 order-2">
                                 <div class="details">
-                                    <h1>دوره هوش مصنوعی</h1>
+                                    <h1>{{ setting_pack.course_title }}</h1>
                                     <p class="mt-3">
-                                        یارب هک تسا دراوراه رتویپماک مولع ینابم هرود Computer science 50 ای 0 .دشاب‌یم یسیون همانرب رنه یریگدای و رتویپماک مولع اب ییانشآ ینایوجشناد بطاخم و دوش‌یم سیردت لی و دراوراه هاگشناد ود رد اهنت هرود
-                                        نیا هیاپ دنراد دصق ای و دنوش انشآ رتویپماک مولع هزوح اب دنراد هقلاع هک تسا .دننک یوق و لیمکت هنیمز نیا رد ار دوخ یملع
+                                        {{ setting_pack.course_description }}
                                     </p>
                                     <div class="mt-3 text-lg-end text-center">
-                                        <a href="">
-                                            <button class="btn btn-right">ثبت نام در دوره</button>
+                                        <a href="#reg">
+                                            <button class="btn btn-right">{{ setting_pack.right_button }}</button>
                                         </a>
                                         <a href="">
-                                            <button class="btn btn-left">شروع دوره از 20 دی ماه</button>
+                                            <button class="btn btn-left">{{ setting_pack.left_button }}</button>
                                         </a>
                                     </div>
                                 </div>
@@ -73,28 +61,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="container">
                         <div class="text-center">
                             <hr />
-                            <h3>به همراه ارائه مدرک معتبر از دانشگاه هاروارد آمریکا</h3>
+                            <h3>{{ setting_pack.title_of_document }}</h3>
                             <a href="#" type="button" class="btn btn-red mt-4 mb-3">مشاهده نمونه مدرک</a>
                         </div>
-                        <div class="row content align-items-center">
-                            <div class="col-lg-6 order-lg-1 order-2">
-                                <h4>معـرفی دوره علوم کامپیـوتر هـاروارد</h4>
-                                <p>
-                                    science Computer دوره مبانی علوم کامپیوتر هاروارد است که برای 50 یا 0 آشنایی با علوم کامپیوتر و یادگیری هنر برنامه نویسی می‌باشد. در دو دانشگاه هاروارد و یل تدریس می‌شود و مخاطب دانشجویانی این دوره تنها
-                                    که عالقه دارند با حوزه علوم کامپیوتر آشنا شوند و یا قصد دارند پایه علمی خود را در این زمینه تکمیل و قوی کنند. است
-                                </p>
-                            </div>
-                            <div class="col-lg-6 order-lg-2 order-1">
-                                <div class="video-box text-center">
-                                    <video poster="/static/pack/images/video.png" controls>
-                                        <source src="./01-DOM-vs-BOM.mp4" type="video/mp4" />
-                                        <source src="movie.ogg" type="video/ogg" />
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <img class="dots" src="/static/pack/images/dunddun!!.png" alt="" />
-                                </div>
-                            </div>
-                        </div>
+{#                        <div class="row content align-items-center">#}
+{#                            <div class="col-lg-6 order-lg-1 order-2">#}
+{#                                <h4>{{ setting_pack.david_video_title_under_register }}</h4>#}
+{#                                <p>#}
+{#                                   {{ setting_pack.david_video_description_under_register }}#}
+{#                                </p>#}
+{#                            </div>#}
+{#                            <div class="col-lg-6 order-lg-2 order-1">#}
+{#                                <div class="video-box text-center">#}
+{#                                    <video poster="/static/pack/images/video.png" controls>#}
+{#                                        <source src="./01-DOM-vs-BOM.mp4" type="video/mp4" />#}
+{#                                        <source src="movie.ogg" type="video/ogg" />#}
+{#                                        Your browser does not support the video tag.#}
+{#                                    </video>#}
+{#                                    <img class="dots" src="/static/pack/images/dunddun!!.png" alt="" />#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
                     </div>
                     <img class="icon-1" src="/static/pack/images/dasdas.png" alt="" />
                     <img class="icon-2" src="/static/pack/images/dunddun!!.png" alt="" />
@@ -109,23 +96,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="row">
                             <article class="col-lg-3 col-md-6 text-center">
                                 <img src="/static/pack/images/3.png" alt="" />
-                                <span class="top">برگزاری به صورت آنلاین </span>
-                                <span class="bottom">روبروی سالن همایش منتقل</span>
+                                <span class="top">{{ setting_pack.course_feature_title1 }}</span>
+                                <span class="bottom">{{ setting_pack.course_feature_description1 }}</span>
                             </article>
                             <article class="col-lg-3 col-md-6 text-center">
                                 <img src="/static/pack/images/2.png" alt="" />
-                                <span class="top">برگزاری به صورت آنلاین </span>
-                                <span class="bottom">روبروی سالن همایش منتقل</span>
+                                <span class="top">{{ setting_pack.course_feature_title2 }}</span>
+                                <span class="bottom">{{ setting_pack.course_feature_description2 }}</span>
                             </article>
                             <article class="col-lg-3 col-md-6 text-center">
                                 <img src="/static/pack/images/1.png" alt="" />
-                                <span class="top">برگزاری به صورت آنلاین </span>
-                                <span class="bottom">روبروی سالن همایش منتقل</span>
+                                <span class="top">{{ setting_pack.course_feature_title3 }}</span>
+                                <span class="bottom">{{ setting_pack.course_feature_description3 }}</span>
                             </article>
                             <article class="col-lg-3 col-md-6 text-center">
                                 <img src="/static/pack/images/4.png" alt="" />
-                                <span class="top">برگزاری به صورت آنلاین </span>
-                                <span class="bottom">روبروی سالن همایش منتقل</span>
+                                <span class="top">{{ setting_pack.course_feature_title4 }}</span>
+                                <span class="bottom">{{ setting_pack.course_feature_description4 }}</span>
                             </article>
                         </div>
                     </div>
@@ -135,46 +122,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="container">
                         <div class="text-center">
                             <hr />
-                            <h3>سرفصل‌های آموزشی و برنامه یادگیری</h3>
+                            <h3>{{ setting_pack.course_topic }}</h3>
                             <p class="mt-3">
-                                0 یا 50 science Computer دوره مبانی علوم کامپیوتر هاروارد است که <br />
-                                برای آشنایی با علوم کامپیوتر و یادگیری هنر برنامه نویسی می‌باشد.
+                                {{ setting_pack.course_under_description1 }}<br />
+                               {{ setting_pack.course_under_description2 }}
                             </p>
                         </div>
                         <div class="row mb-3">
                             <div class="col-lg-4 mt-5 d-lg-block d-none">
                                 <div class="box">
                                     <hr />
-                                    <h5>برنامه نویسی وب</h5>
+                                    <h5>{{ setting_pack.course_web_title }}</h5>
                                     <ul>
-                                        <li>یازده جلسه آموزشی</li>
-                                        <li>یازده جلسه رفع اشکال</li>
-                                        <li>سه رویداد شامل پازل دی ، نمایشگاه</li>
-                                        <li>ارائه گواهی سی اس فیفتی از هاروارد و ..</li>
+                                        <li>{{ setting_pack.course_web_description1 }}</li>
+                                        <li>{{ setting_pack.course_web_description2 }}</li>
+                                        <li>{{ setting_pack.course_web_description3 }}</li>
+                                        <li>{{ setting_pack.course_web_description4 }}</li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-lg-4 mt-5 d-lg-block d-none">
                                 <div class="box">
                                     <hr />
-                                    <h5>برنامه نویسی اندروید</h5>
+                                    <h5>{{ setting_pack.course_android_title }}</h5>
                                     <ul>
-                                        <li>یازده جلسه آموزشی</li>
-                                        <li>یازده جلسه رفع اشکال</li>
-                                        <li>سه رویداد شامل پازل دی ، نمایشگاه</li>
-                                        <li>ارائه گواهی سی اس فیفتی از هاروارد و ..</li>
+                                        <li>{{ setting_pack.course_android_description1 }}</li>
+                                        <li>{{ setting_pack.course_android_description2 }}</li>
+                                        <li>{{ setting_pack.course_android_description3 }}</li>
+                                        <li>{{ setting_pack.course_android_description4 }}</li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-lg-4 mt-5 d-lg-block d-none">
                                 <div class="box">
                                     <hr />
-                                    <h5>هوش مصنوعی</h5>
+                                    <h5>{{ setting_pack.course_ai_title }}</h5>
                                     <ul>
-                                        <li>یازده جلسه آموزشی</li>
-                                        <li>یازده جلسه رفع اشکال</li>
-                                        <li>سه رویداد شامل پازل دی ، نمایشگاه</li>
-                                        <li>ارائه گواهی سی اس فیفتی از هاروارد و ..</li>
+                                        <li>{{ setting_pack.course_ai_description1 }}</li>
+                                        <li>{{ setting_pack.course_ai_description2 }}</li>
+                                        <li>{{ setting_pack.course_ai_description3 }}</li>
+                                        <li>{{ setting_pack.course_ai_description4 }}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -183,16 +170,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="flush-headingTwo2">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo2" aria-expanded="false" aria-controls="flush-collapseTwo2">
-                                                برنامه نویسی وب
+                                               {{ setting_pack.course_web_title }}
                                             </button>
                                         </h2>
                                         <div id="flush-collapseTwo2" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo2" data-bs-parent="#accordionFlushExample23">
                                             <div class="accordion-body">
                                                 <ul>
-                                                    <li>یازده جلسه آموزشی</li>
-                                                    <li>یازده جلسه رفع اشکال</li>
-                                                    <li>سه رویداد شامل پازل دی ، نمایشگاه</li>
-                                                    <li>ارائه گواهی سی اس فیفتی از هاروارد و ..</li>
+                                                    <li>{{ setting_pack.course_web_description1 }}</li>
+                                                    <li>{{ setting_pack.course_web_description2 }}</li>
+                                                    <li>{{ setting_pack.course_web_description3 }}</li>
+                                                    <li>{{ setting_pack.course_web_description4 }}</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -200,16 +187,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="flush-headingThree2">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree2" aria-expanded="false" aria-controls="flush-collapseThree2">
-                                                برنامه نویسی اندروید
+                                              {{ setting_pack.course_android_title }}
                                             </button>
                                         </h2>
                                         <div id="flush-collapseThree2" class="accordion-collapse collapse" aria-labelledby="flush-headingThree2" data-bs-parent="#accordionFlushExample23">
                                             <div class="accordion-body">
                                                 <ul>
-                                                    <li>یازده جلسه آموزشی</li>
-                                                    <li>یازده جلسه رفع اشکال</li>
-                                                    <li>سه رویداد شامل پازل دی ، نمایشگاه</li>
-                                                    <li>ارائه گواهی سی اس فیفتی از هاروارد و ..</li>
+                                                    <li>{{ setting_pack.course_android_description1 }}</li>
+                                                    <li>{{ setting_pack.course_android_description2 }}</li>
+                                                    <li>{{ setting_pack.course_android_description3 }}</li>
+                                                    <li>{{ setting_pack.course_android_description4 }}</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -217,16 +204,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="flush-headingfour2">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefour2" aria-expanded="false" aria-controls="flush-collapsefour2">
-                                                هوش مصنوعی
+                                               {{ setting_pack.course_ai_title }}
                                             </button>
                                         </h2>
                                         <div id="flush-collapsefour2" class="accordion-collapse collapse" aria-labelledby="flush-headingThree2" data-bs-parent="#accordionFlushExample23">
                                             <div class="accordion-body">
                                                 <ul>
-                                                    <li>یازده جلسه آموزشی</li>
-                                                    <li>یازده جلسه رفع اشکال</li>
-                                                    <li>سه رویداد شامل پازل دی ، نمایشگاه</li>
-                                                    <li>ارائه گواهی سی اس فیفتی از هاروارد و ..</li>
+                                                    <li>{{ setting_pack.course_ai_description1 }}</li>
+                                                    <li>{{ setting_pack.course_ai_description2 }}</li>
+                                                    <li>{{ setting_pack.course_ai_description3 }}</li>
+                                                    <li>{{ setting_pack.course_ai_description4 }}</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -239,12 +226,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="teacher-box">
                                     <div class="row align-items-center">
                                         <div class="col-lg-6 order-lg-1 order-2">
-                                            <h5>مدرس دوره</h5>
+                                            <h5>{{ setting_pack.first_teacher_name }}</h5>
                                             <p class="mb-4 mt-4">
-                                                0 یا 50 science Computer دوره مبانی علوم کامپیوتر هاروارد است که برای آشنایی با علوم کامپیوتر و یادگیری هنر برنامه نویسی می‌باشد. سمیشتمتنمیسسصصشیسش مبانییتشنمتیس دوره Computer science 50 یا 0
-                                                آشنایی با علوم کامپیوتر و یادگیری هنر برنامه نویسی می‌باشد. دوره تنها در دو دانشگاه هاروارد و یل تدریس می‌شود و مخاطب دانشجویانی
+                                              {{ setting_pack.first_teacher_description }}
                                             </p>
-                                            <a href="#" type="button" class="btn btn-red">ثبت نام در دوره</a>
+                                            <a href="#reg" type="button" class="btn btn-red">{{ setting_pack.first_teacher_button }}</a>
                                         </div>
                                         <div class="col-lg-6 text-start order-lg-2 order-1">
                                             <img src="/static/pack/images/modares-Copy.png" alt="" />
@@ -259,13 +245,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                             <img src="/static/pack/images/modares.png" alt="" />
                                         </div>
                                         <div class="col-lg-6">
-                                            <h5>مدرس دوره</h5>
+                                            <h5>{{ setting_pack.second_teacher_name }}</h5>
                                             <p class="mb-4 mt-4">
-                                                0 یا 50 science Computer دوره مبانی علوم کامپیوتر هاروارد است که برای آشنایی با علوم کامپیوتر و یادگیری هنر برنامه نویسی می‌باشد. سمیشتمتنمیسسصصشیسش مبانییتشنمتیس دوره Computer science 50 یا 0
-                                                آشنایی با علوم کامپیوتر و یادگیری هنر برنامه نویسی می‌باشد. دوره تنها در دو دانشگاه هاروارد و یل تدریس می‌شود و مخاطب دانشجویانی
+                                               {{ setting_pack.second_teacher_description }}
                                             </p>
                                             <div class="text-sm-start text-end">
-                                                <a href="#" type="button" class="btn btn-red">ثبت نام در دوره</a>
+                                                <a href="#reg" type="button" class="btn btn-red">{{ setting_pack.second_teacher_button }}</a>
                                             </div>
                                         </div>
                                     </div>
@@ -275,12 +260,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="teacher-box">
                                     <div class="row align-items-center">
                                         <div class="col-lg-6 order-lg-1 order-2">
-                                            <h5>مدرس دوره</h5>
+                                            <h5>{{ setting_pack.third_teacher_name }}</h5>
                                             <p class="mb-4 mt-4">
-                                                0 یا 50 science Computer دوره مبانی علوم کامپیوتر هاروارد است که برای آشنایی با علوم کامپیوتر و یادگیری هنر برنامه نویسی می‌باشد. سمیشتمتنمیسسصصشیسش مبانییتشنمتیس دوره Computer science 50 یا 0
-                                                آشنایی با علوم کامپیوتر و یادگیری هنر برنامه نویسی می‌باشد. دوره تنها در دو دانشگاه هاروارد و یل تدریس می‌شود و مخاطب دانشجویانی
+                                                {{ setting_pack.third_teacher_description }}
                                             </p>
-                                            <a href="#" type="button" class="btn btn-red">ثبت نام در دوره</a>
+                                            <a href="#reg" type="button" class="btn btn-red">{{ setting_pack.third_teacher_button }}</a>
                                         </div>
                                         <div class="col-lg-6 text-start order-lg-2 order-1">
                                             <img src="/static/pack/images/modares-Copy.png" alt="" />
@@ -469,147 +453,147 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </section>
             {% include "../form.html" %}
-            <section>
-                <div class="gallery-section">
-                    <div class="container">
-                        <div class="text-center">
-                            <hr />
-                            <h3>تصاویر دوره تابستان</h3>
-                        </div>
-                        <div class="row mt-4 d-lg-flex d-none">
-                            <div class="col-lg-4">
-                                <div class="col-lg-12">
-                                    <a type="button" class="gallery">
-                                        <img src="/static/pack/images/MaskGroup.png" alt="" />
-                                        <div class="title-bg">
-                                            <span>آشنایی با علوم کامپیوتر و</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-lg-12">
-                                    <a type="button" class="gallery">
-                                        <img src="/static/pack/images/MaskGroup-4.png" alt="" />
-                                        <div class="title-bg">
-                                            <span>آشنایی با علوم کامپیوتر و</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="col-lg-12">
-                                    <a type="button" class="gallery">
-                                        <img src="/static/pack/images/MaskGroup-2.png" alt="" />
-                                        <div class="title-bg">
-                                            <span>آشنایی با علوم کامپیوتر و</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-lg-12">
-                                    <a type="button" class="gallery">
-                                        <img src="/static/pack/images/MaskGroup-5.png" alt="" />
-                                        <div class="title-bg">
-                                            <span>آشنایی با علوم کامپیوتر و</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="col-lg-12">
-                                    <a type="button" class="gallery">
-                                        <img src="/static/pack/images/MaskGroup-1.png" alt="" />
-                                        <div class="title-bg">
-                                            <span>آشنایی با علوم کامپیوتر و</span>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <div class="col-lg-12">
-                                    <a type="button" class="gallery">
-                                        <img src="/static/pack/images/MaskGroup-3.png" alt="" />
-                                        <div class="title-bg">
-                                            <span>آشنایی با علوم کامپیوتر و</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 hide1">
-                                <div class="col-lg-12">
-                                    <a type="button" class="gallery">
-                                        <img src="/static/pack/images/MaskGroup-3.png" alt="" />
-                                        <div class="title-bg">
-                                            <span>آشنایی با علوم کامپیوتر و</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt-4 d-lg-none d-flex">
-                            <div class="col-6">
-                                <div class="col-12">
-                                    <a type="button" class="gallery">
-                                        <img src="/static/pack/images/MaskGroup.png" alt="" />
-                                        <div class="title-bg">
-                                            <span>آشنایی با علوم کامپیوتر و</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-12">
-                                    <a type="button" class="gallery">
-                                        <img src="/static/pack/images/MaskGroup-4.png" alt="" />
-                                        <div class="title-bg">
-                                            <span>آشنایی با علوم کامپیوتر و</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="col-12">
-                                    <a type="button" class="gallery">
-                                        <img src="/static/pack/images/MaskGroup-2.png" alt="" />
-                                        <div class="title-bg">
-                                            <span>آشنایی با علوم کامپیوتر و</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-12">
-                                    <a type="button" class="gallery">
-                                        <img src="/static/pack/images/MaskGroup-5.png" alt="" />
-                                        <div class="title-bg">
-                                            <span>آشنایی با علوم کامپیوتر و</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <a type="button" class="gallery">
-                                    <img src="/static/pack/images/MaskGroup-5.png" alt="" />
-                                    <div class="title-bg">
-                                        <span>آشنایی با علوم کامپیوتر و</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-4 hide1">
-                                <div class="col-lg-12">
-                                    <a type="button" class="gallery">
-                                        <img src="/static/pack/images/MaskGroup-3.png" alt="" />
-                                        <div class="title-bg">
-                                            <span>آشنایی با علوم کامپیوتر و</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <button type="button" onclick="showMore('.hide1','hide1')" class="show-more">
-                                <span>نمایش سوالات بیستر</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="7" viewBox="0 0 17 7" fill="none">
-                                    <path d="M16 1L8.85714 6L1 1" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
+{#            <section>#}
+{#                <div class="gallery-section">#}
+{#                    <div class="container">#}
+{#                        <div class="text-center">#}
+{#                            <hr />#}
+{#                            <h3>تصاویر دوره تابستان</h3>#}
+{#                        </div>#}
+{#                        <div class="row mt-4 d-lg-flex d-none">#}
+{#                            <div class="col-lg-4">#}
+{#                                <div class="col-lg-12">#}
+{#                                    <a type="button" class="gallery">#}
+{#                                        <img src="/static/pack/images/MaskGroup.png" alt="" />#}
+{#                                        <div class="title-bg">#}
+{#                                            <span>آشنایی با علوم کامپیوتر و</span>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="col-lg-12">#}
+{#                                    <a type="button" class="gallery">#}
+{#                                        <img src="/static/pack/images/MaskGroup-4.png" alt="" />#}
+{#                                        <div class="title-bg">#}
+{#                                            <span>آشنایی با علوم کامپیوتر و</span>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-lg-4">#}
+{#                                <div class="col-lg-12">#}
+{#                                    <a type="button" class="gallery">#}
+{#                                        <img src="/static/pack/images/MaskGroup-2.png" alt="" />#}
+{#                                        <div class="title-bg">#}
+{#                                            <span>آشنایی با علوم کامپیوتر و</span>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="col-lg-12">#}
+{#                                    <a type="button" class="gallery">#}
+{#                                        <img src="/static/pack/images/MaskGroup-5.png" alt="" />#}
+{#                                        <div class="title-bg">#}
+{#                                            <span>آشنایی با علوم کامپیوتر و</span>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-lg-4">#}
+{#                                <div class="col-lg-12">#}
+{#                                    <a type="button" class="gallery">#}
+{#                                        <img src="/static/pack/images/MaskGroup-1.png" alt="" />#}
+{#                                        <div class="title-bg">#}
+{#                                            <span>آشنایی با علوم کامپیوتر و</span>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{##}
+{#                                <div class="col-lg-12">#}
+{#                                    <a type="button" class="gallery">#}
+{#                                        <img src="/static/pack/images/MaskGroup-3.png" alt="" />#}
+{#                                        <div class="title-bg">#}
+{#                                            <span>آشنایی با علوم کامپیوتر و</span>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-lg-4 hide1">#}
+{#                                <div class="col-lg-12">#}
+{#                                    <a type="button" class="gallery">#}
+{#                                        <img src="/static/pack/images/MaskGroup-3.png" alt="" />#}
+{#                                        <div class="title-bg">#}
+{#                                            <span>آشنایی با علوم کامپیوتر و</span>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="row mt-4 d-lg-none d-flex">#}
+{#                            <div class="col-6">#}
+{#                                <div class="col-12">#}
+{#                                    <a type="button" class="gallery">#}
+{#                                        <img src="/static/pack/images/MaskGroup.png" alt="" />#}
+{#                                        <div class="title-bg">#}
+{#                                            <span>آشنایی با علوم کامپیوتر و</span>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="col-12">#}
+{#                                    <a type="button" class="gallery">#}
+{#                                        <img src="/static/pack/images/MaskGroup-4.png" alt="" />#}
+{#                                        <div class="title-bg">#}
+{#                                            <span>آشنایی با علوم کامپیوتر و</span>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-6">#}
+{#                                <div class="col-12">#}
+{#                                    <a type="button" class="gallery">#}
+{#                                        <img src="/static/pack/images/MaskGroup-2.png" alt="" />#}
+{#                                        <div class="title-bg">#}
+{#                                            <span>آشنایی با علوم کامپیوتر و</span>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="col-12">#}
+{#                                    <a type="button" class="gallery">#}
+{#                                        <img src="/static/pack/images/MaskGroup-5.png" alt="" />#}
+{#                                        <div class="title-bg">#}
+{#                                            <span>آشنایی با علوم کامپیوتر و</span>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-12">#}
+{#                                <a type="button" class="gallery">#}
+{#                                    <img src="/static/pack/images/MaskGroup-5.png" alt="" />#}
+{#                                    <div class="title-bg">#}
+{#                                        <span>آشنایی با علوم کامپیوتر و</span>#}
+{#                                    </div>#}
+{#                                </a>#}
+{#                            </div>#}
+{#                            <div class="col-4 hide1">#}
+{#                                <div class="col-lg-12">#}
+{#                                    <a type="button" class="gallery">#}
+{#                                        <img src="/static/pack/images/MaskGroup-3.png" alt="" />#}
+{#                                        <div class="title-bg">#}
+{#                                            <span>آشنایی با علوم کامپیوتر و</span>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="text-center">#}
+{#                            <button type="button" onclick="showMore('.hide1','hide1')" class="show-more">#}
+{#                                <span>نمایش سوالات بیستر</span>#}
+{#                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="7" viewBox="0 0 17 7" fill="none">#}
+{#                                    <path d="M16 1L8.85714 6L1 1" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />#}
+{#                                </svg>#}
+{#                            </button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </section>#}
         </main>
         <a href="#" class="btn btn-top" id="fixedBtn">
             <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -621,21 +605,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="row">
                     <div class="col-lg-4 order-lg-1 order-2">
                         <ul class="menu">
-                            <li><a href="">ورود</a></li>
-                            <li><a href="">تیم ما</a></li>
-                            <li><a href="">درباره ما</a></li>
+{#                            <li><a href="">ورود</a></li>#}
+{#                            <li><a href="">تیم ما</a></li>#}
+{#                            <li><a href="">درباره ما</a></li>#}
                         </ul>
                     </div>
                     <div class="col-lg-4 text-center order-lg-2 order-1">
-                        <img src="/static/pack/images/logo2.png" alt="" />
+                        <img src="/static/pack/images/logo2.svg" alt="" />
                         <div class="line"></div>
                         <div class="text-center">
-                            <h4>حامیان</h4>
+{#                            <h4>حامیان</h4>#}
                         </div>
                         <div class="flex mt-4">
-                            <div class="sponsor"><img src="/static/pack/images/Rectangle1181.png" alt="" /></div>
-                            <div class="sponsor"><img src="/static/pack/images/Rectangle1181.png" alt="" /></div>
-                            <div class="sponsor"><img src="/static/pack/images/Rectangle1181.png" alt="" /></div>
+                            <div class="sponsor"><img src="/static/pack/images/Rectangle11811.png" alt="" /></div>
+                            <div class="sponsor"><img src="/static/pack/images/Rectangle11811.png" alt="" /></div>
+                            <div class="sponsor"><img src="/static/pack/images/Rectangle11811.png" alt="" /></div>
                         </div>
                     </div>
                     <div class="col-lg-4 order-lg-3 order-3">
