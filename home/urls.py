@@ -12,6 +12,6 @@ urlpatterns = [
 
     path('payment', payment),
     path('verify_coupon', verify_coupon),
-    path('/winter/validate_payment', validate_payment),
+    path('validate_payment', validate_payment),
     path('payment_result', payment_result)
 ]
