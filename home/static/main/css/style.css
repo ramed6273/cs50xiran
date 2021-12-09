@@ -157,8 +157,8 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.1ms ease-in-out;
+  transition: all 0.1ms ease-in-out;
 }
 
 a {
@@ -314,8 +314,8 @@ body main section .top-section {
 
 body main section .top-section .details img {
   width: 70px;
-  margin-top: 150px;
-  margin-bottom: 7px;
+  margin-top: 120px;
+  margin-bottom: -12px;
 }
 
 body main section .top-section .details span {
@@ -349,7 +349,7 @@ body main section .top-section .details .red span {
   display: inline-block;
   font-size: 28px;
   color: #a51c30;
-  font-weight: 500;
+  font-weight: 900;
   margin: 0 5px 0 0;
   vertical-align: middle;
 }
@@ -403,6 +403,7 @@ body main section .packages-section .box .contents hr {
 
 body main section .packages-section .box .contents p {
   margin: 10px 0;
+  font-size: 12px;
 }
 
 body main section .packages-section .box .contents .price {
@@ -478,14 +479,14 @@ body main section .packages-section .wrapper .box-big .content p {
   margin: 15px 0;
 }
 
-body main section .introduction-section {
+body main section .--section {
   position: relative;
   overflow: hidden;
   padding-bottom: 160px;
 }
 
 body main section .introduction-section .content {
-  margin-top: 65px;
+  margin-top: 100px;
 }
 
 body main section .introduction-section .content h4 {
@@ -502,6 +503,7 @@ body main section .introduction-section .content p {
 
 body main section .introduction-section .content .video-box {
   position: relative;
+
 }
 
 body main section .introduction-section .content .video-box .dots {
@@ -516,6 +518,7 @@ body main section .introduction-section .content .video-box .video {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
+
 }
 
 body main section .introduction-section .content .video-box .video img {
@@ -723,7 +726,7 @@ body main section .course-title-section .teacher-box {
 }
 
 body main section .course-title-section .teacher-box img {
-  width: 100%;
+  width: 80%;
 }
 
 body main section .laptop-section {
