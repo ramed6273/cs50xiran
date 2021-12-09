@@ -206,7 +206,7 @@ def payment_result(request):
     date = request.GET.get('date')
     type = request.GET.get('type')
 
-    return render(request, "home/payment_result.html", {
+    return render(request, "home/winter/payment_result.html", {
         'is_success': is_success,
         'track_number': track_number,
         'date': date,
