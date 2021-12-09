@@ -196,7 +196,7 @@ def payment(request):
             return redirect(transaction_url)
         else:
             send_sms(order)
-            return redirect(f"/winter/payment_result?type={order.product.name}&date={transaction.created_at.strftime('%H:%M:%S %d-%m-%Y')}&track_number={transaction.order_number}&is_success=True")
+            return redirect(f"/payment_result?type={order.product.name}&date={transaction.created_at.strftime('%H:%M:%S %d-%m-%Y')}&track_number={transaction.order_number}&is_success=True")
 
     return redirect("/")
 
@@ -206,7 +206,7 @@ def payment_result(request):
     date = request.GET.get('date')
     type = request.GET.get('type')
 
-    return render(request, "/winter/payment_result.html", {
+    return render(request, "home/payment_result.html", {
         'is_success': is_success,
         'track_number': track_number,
         'date': date,
@@ -267,7 +267,7 @@ def validate_payment(request):
         order.delete()
         [c.delete() for c in customers]
 
-    return redirect(f"/winter/payment_result?type={order.product.name}&date={transaction.created_at.strftime('%H:%M:%S %d-%m-%Y')}&track_number={transaction.order_number}{'' if not is_success else '&is_success=True'}")
+    return redirect(f"/payment_result?type={order.product.name}&date={transaction.created_at.strftime('%H:%M:%S %d-%m-%Y')}&track_number={transaction.order_number}{'' if not is_success else '&is_success=True'}")
 
 def send_sms(order):
     url = "http://panel.signalads.com/rest/api/v1/message/send.json"
