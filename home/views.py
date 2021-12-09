@@ -196,7 +196,7 @@ def payment(request):
             return redirect(transaction_url)
         else:
             send_sms(order)
-            return redirect(f"/payment_result?type={order.product.name}&date={transaction.created_at.strftime('%H:%M:%S %d-%m-%Y')}&track_number={transaction.order_number}&is_success=True")
+            return redirect(f"/winter/payment_result?type={order.product.name}&date={transaction.created_at.strftime('%H:%M:%S %d-%m-%Y')}&track_number={transaction.order_number}&is_success=True")
 
     return redirect("/")
 
