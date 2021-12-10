@@ -84,7 +84,7 @@ function removeFields(e) {
 async function check_coupon(e) {
     const email = document.querySelector('.sign-up-section #email').value
     const code = document.querySelector('#coupon').value
-    const req = await fetch(`/verify_coupon?code=${code}&email=${email}`)
+    const req = await fetch(`/winter/verify_coupon?code=${code}&email=${email}`)
     const res = await req.text()
 
     e.parentElement.parentElement.querySelector('.error').style.display = 'none'
