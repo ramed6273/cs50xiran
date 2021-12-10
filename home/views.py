@@ -11,6 +11,7 @@ from .models import *
 import requests
 import json
 
+
 # Main Views
 def web(request):
     setting_web = Setting_Web.objects.first()
@@ -48,6 +49,11 @@ def pack(request):
         'discount': Discount.objects.get(product=product),
         'setting_pack' : setting_pack
     })
+
+
+#Term and Conditions
+def term(request):
+    return render(request, 'home/about-us/term.html')
 
 def about_us(request):
     return render(request, 'home/about-us/index.html')

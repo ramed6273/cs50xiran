@@ -9,7 +9,7 @@ urlpatterns = [
     path('pack', pack),
     path('team-us', team_us),
     path('web', web),
-
+    path('term', term),
     path('payment', payment),
     path('verify_coupon', verify_coupon),
     path('validate_payment', validate_payment),
