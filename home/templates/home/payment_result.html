@@ -24,52 +24,87 @@
     </head>
     <body>
         {% include "./header.html" %}
+    <main>
+        <div class="container">
+         <section>
+                <div class="packages-section">
+                    <div class="text text-center">
 
 
-        <div class="container" style="padding: 300px">
+                    </div>
 
-            {% if is_success %}
-                <center><img src="static/payment/success.svg"></center>
-                <h2 class="text-center">خرید شما با موفقیت انجام شد</h2><br />
-            {% else %}
-                <center><img  src="static/payment/error.svg"></center>
+                    <div class="container">
+                        <div class="wrapper">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-6 col-12">
+                                    <div class="box">
+
+                                        <div class="contents">
+                                            {% if is_success %}
+                                            <img width="50" height="50" src="static/payment/success.svg" />
+                                            <h5>خرید شما با موفقیت انجام شد
+</h5>
+                                            <p>اطلاعات پنل کاربری را یک هفته قبل از شروع دوره برای شما ارسال خواهیم کرد.
+
+</p>
+                                            {% else %}
+                                            <img width="50" height="50" src="static/payment/error.svg" />
+                                            <h5>متأسفانه خرید انجام نشد.
+</h5>
+                                            {% endif %}
+
+                                            <div class="price" style="background-color: #F1F1F1; border: 8px;">
+                                                <div>
+                                                    <span>نوع خرید</span>
+                                                </div>
+                                                <div>
+                                                    <h6>{{ type }}</h6>
+                                                </div>
+                                            </div>
+                                            <div class="price" style="background-color: #E6E6E6; border: 8px;">
+                                                <div>
+                                                    <span>زمان خرید</span>
+                                                </div>
+                                                <div>
+                                                    <span>{{ date }}</span>
+                                                </div>
+                                            </div>
+                                            <div class="price" style="background-color: #F1F1F1; border: 8px;">
+                                                <div>
+                                                    <span>کد پیگیری</span>
+                                                </div>
+                                                <div>
+                                                    <span>{{ track_number }}</span>
+                                                </div>
+                                            </div>
+<a href="/winter"><button class="btn btn-right" style="background-color: #A51C30; color: white; border-radius: 16px; width: 268px; height: 53px;"><b>بازشگت به صفحه قبل</b></button></a>
+                                        </div>
+                                    </div>
+                                </div>
 
 
-
-                <h2 class="text-center">متاسفانه خرید انجام نشد</h2><br />
-            {% endif %}
-            <div class="row" style="border-radius: 8px;background-color: #F1F1F1; width: 674px; height: 42px;">
-                <div class="col-md-6 mt-3 text-center" >نوع خرید:</div>
-                <div class="col-md-6 mt-3 text-center">{{ type }}</div>
-            </div><br />
-        <div class="row" style="border-radius: 8px;background-color: #F1F1F1; width: 674px; height: 42px;">
-            <div class="col-md-6"><p class="text-center mt-3">زمان خرید:</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            <div class="col-md-6">
-                <p class="text-center mt-3">{{ date }}</p>
+            </section>
+
+
+
             </div>
-        </div><br />
-        <div class="row" style="border-radius: 8px;background-color: #F1F1F1; width: 674px; height: 42px">
-            <div class="col-md-6">
-                <p class="text-center mt-3">کد پیگیری: </p>
-            </div>
-            <div class="col-md-6">
-                <p class="text-center mt-3"> {{ track_number }}</p>
-            </div>
-        </div><br />
-        <div class="row">
-            <div class="col-md-3"></div>
 
-            <div class="col-md-4">
-            <a href="/winter"><button class="btn btn-right" style="background-color: #A51C30; color: white; border-radius: 16px; width: 268px; height: 53px;"><b>بازشگت به صفحه قبل</b></button></a>
-                </div>
-            <div class="col-md-3"></div>
-        </div>
+    </main>
 
 
 
 
-        </div>
+
+
+
+
+
+
+
 
 
 
