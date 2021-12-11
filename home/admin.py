@@ -1,9 +1,21 @@
 from django.contrib import admin
 from .models import *
 
-admin.site.register(Customer)
+class CustomerAdmin(admin.ModelAdmin):
+    list_display = ['firstname', 'lastname', 'number', 'email']
+    search_fields = ['firstname', 'lastname', 'number', 'email']
+admin.site.register(Customer, CustomerAdmin)
+
+
 admin.site.register(Product)
-admin.site.register(Order)
+
+
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ['track_number', 'buyer', 'product', 'status']
+    search_fields = ['track_number']
+
+
+admin.site.register(Order, OrderAdmin)
 admin.site.register(Coupon)
 admin.site.register(Discount)
 
