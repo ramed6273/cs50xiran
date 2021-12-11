@@ -121,7 +121,7 @@ def payment(request):
             price -= discount.amount * customers_count
 
         # Process coupon code
-        if coupon and not is_group:
+        if coupon and not is_group and product.type != 'pack':
             try:
                 coupon = Coupon.objects.get(code=coupon)
                 if coupon.is_expired:
@@ -301,9 +301,9 @@ def send_sms(order):
             "from": settings.SIGNAL_NUMBER,
             "message": customer.firstname + " عزیز" + '\n\n'
                     f'ثبت نام شما در  دوره‌ی {order.product.get_type_display()} انجام شد. کد پیگیری شما {order.transaction.order_number} است.' + '\n\n'
-                    "به زودی با شما" + '\n\n'
-                    "تماس خواهیم" + '\n\n'
-                    "گرفت" + '\n\n',
+                    "اطلاعات پنل کاربری را یم هفته قبل از شروع دوره برای شما ارسال خواهیم کرد." + '\n\n'
+                    "سی‌اس‌فیفتی ایران" + '\n\n'
+                    "cs50x.ir" + '\n\n',
             "numbers": [customer.number]
         }
         requests.post(url, headers=headers, json=payload)
