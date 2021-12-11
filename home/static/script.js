@@ -11,7 +11,9 @@ function addFields() {
         return false
     }
 
-    document.querySelector(".coupon-input").style.display = 'none'
+    try {
+        document.querySelector(".coupon-input").style.display = 'none'
+    } catch (e) {}
 
     const inptus = `
         <div class="extra-field">
@@ -65,7 +67,9 @@ function removeFields(e) {
     if (extraFields.querySelectorAll('.extra-field').length == 1) {
         count = 2
         extraFields.innerHTML = ''
-        document.querySelector(".coupon-input").style.display = 'block'
+        try {
+            document.querySelector(".coupon-input").style.display = 'block'
+        } catch (e) {}
     }
         
     if (!extraFields.querySelector('.extra-field')) {
