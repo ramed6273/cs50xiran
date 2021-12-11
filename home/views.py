@@ -3,7 +3,6 @@ from django.core.exceptions import ValidationError
 from django_zarinpal.services import start_transaction, verify_transaction
 from django_zarinpal.exceptions import ZarinpalException
 from django.core.validators import RegexValidator
-from django_zarinpal.models import Transaction
 from django.contrib.auth.models import User
 from django.conf import settings
 from datetime import datetime
@@ -15,34 +14,43 @@ import json
 
 # Main Views
 def web(request):
+    setting_web = Setting_Web.objects.first()
     product = Product.objects.get(type='web')
     return render(request, 'home/web/index.html', {
         'product': product,
-        'discount': Discount.objects.get(product=product)
+        'discount': Discount.objects.get(product=product),
+        'setting_web': setting_web
     })
 
 
 def ai(request):
+    setting_ai = Setting_AI.objects.first()
     product = Product.objects.get(type='ai')
     return render(request, 'home/ai/index.html', {
         'product': product,
-        'discount': Discount.objects.get(product=product)
+        'discount': Discount.objects.get(product=product),
+        'setting_ai': setting_ai
+
     })
 
 
 def android(request):
+    setting_android = Setting_Android.objects.first()
     product = Product.objects.get(type='android')
     return render(request, 'home/android/index.html', {
         'product': product,
-        'discount': Discount.objects.get(product=product)
+        'discount': Discount.objects.get(product=product),
+        'setting_android': setting_android
     })
 
 
 def pack(request):
+    setting_pack = Setting_Pack.objects.first()
     product = Product.objects.get(type='pack')
     return render(request, 'home/pack/index.html', {
         'product': product,
-        'discount': Discount.objects.get(product=product)
+        'discount': Discount.objects.get(product=product),
+        'setting_pack': setting_pack
     })
 
 
@@ -50,6 +58,7 @@ def about_us(request):
     return render(request, 'home/about-us/index.html')
 def term(request):
     return render(request, 'home/about-us/term.html')
+
 
 def team_us(request):
     return render(request, 'home/team-us/index.html')
@@ -112,7 +121,7 @@ def payment(request):
             price -= discount.amount * customers_count
 
         # Process coupon code
-        if coupon and not is_group and product.type != 'pack':
+        if coupon and not is_group:
             try:
                 coupon = Coupon.objects.get(code=coupon)
                 if coupon.is_expired:
@@ -199,31 +208,23 @@ def payment(request):
         else:
             send_sms(order)
             return redirect(
-                f"/winter/payment_result?track_number={transaction.order_number}&product_name={order.product.name}")
+                f"/winter/payment_result?type={order.product.name}&date={transaction.created_at.strftime('%H:%M:%S %d-%m-%Y')}&track_number={transaction.order_number}&is_success=True")
 
     return redirect("/")
 
 
 def payment_result(request):
-    try:
-        product_name = request.GET.get('product_name')
-        track_number = request.GET.get('track_number')
-        transaction = Transaction.objects.get(order_number=track_number)
+    is_success = bool(request.GET.get('is_success'))
+    track_number = request.GET.get('track_number')
+    date = request.GET.get('date')
+    type = request.GET.get('type')
 
-        if transaction.is_shown:
-            raise Exception
-
-        transaction.is_shown = True
-        transaction.save()
-
-        return render(request, "home/payment_result.html", {
-            'is_success': transaction.status == 'SUCCESS',
-            'track_number': transaction.order_number,
-            'date': transaction.created_at.strftime('%H:%M:%S %d-%m-%Y'),
-            'type': product_name
-        })
-    except:
-        return HttpResponse(status=400)
+    return render(request, "home/payment_result.html", {
+        'is_success': is_success,
+        'track_number': track_number,
+        'date': date,
+        'type': type
+    })
 
 
 def validate_data(firstname, lastname, email, number):
@@ -267,7 +268,6 @@ def validate_payment(request):
     try:
         transaction = verify_transaction(Status, Authority)
         order = Order.objects.get(transaction=transaction)
-        product_name = order.product.name
         is_success = True if transaction.status == "SUCCESS" else False
     except ZarinpalException:
         return index(request, error="Failed to verify the Transaction")
@@ -285,7 +285,8 @@ def validate_payment(request):
         order.delete()
         [c.delete() for c in customers]
 
-    return redirect(f"/winter/payment_result?track_number={transaction.order_number}&product_name={product_name}")
+    return redirect(
+        f"/winter/payment_result?type={order.product.name}&date={transaction.created_at.strftime('%H:%M:%S %d-%m-%Y')}&track_number={transaction.order_number}{'' if not is_success else '&is_success=True'}")
 
 
 def send_sms(order):
@@ -298,11 +299,11 @@ def send_sms(order):
     for customer in order.customers.all():
         payload = {
             "from": settings.SIGNAL_NUMBER,
-            "message": customer.firstname + " عزیر" + '\n\n'
+            "message": customer.firstname + " عزیز" + '\n\n'
                     f'ثبت نام شما در  دوره‌ی {order.product.get_type_display()} انجام شد. کد پیگیری شما {order.transaction.order_number} است.' + '\n\n'
-                    "اطلاعات پنل کاربری را برای شما ارسال خواهیم کرد." + '\n\n'
-                    "سی اس فیفتی ایران" + '\n\n'
-                    "cs50x.ir" + '\n\n',
+                    "به زودی با شما" + '\n\n'
+                    "تماس خواهیم" + '\n\n'
+                    "گرفت" + '\n\n',
             "numbers": [customer.number]
         }
         requests.post(url, headers=headers, json=payload)
