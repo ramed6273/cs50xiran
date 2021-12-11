@@ -295,7 +295,9 @@ def send_sms(order):
         'Authorization': f'Bearer {settings.SIGNAL_TOKEN}',
         'Content-Type': 'application/json'
     }
-
+    
+    subject_str = "تأیید ثبت‌نام در دوره‌های زمستانه | CS50x Iran" #Email Subject
+    from_email = settings.EAMIL_ADDRESS
     for customer in order.customers.all():
         payload = {
             "from": settings.SIGNAL_NUMBER,
@@ -307,3 +309,4 @@ def send_sms(order):
             "numbers": [customer.number]
         }
         requests.post(url, headers=headers, json=payload)
+        send_mail(subject_str,payload["message"],from_email,[customer.email],fail_silently=False)
