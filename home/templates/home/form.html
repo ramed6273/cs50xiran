@@ -1,11 +1,11 @@
-<link rel="stylesheet" href="static/style.css" />
+<link rel="stylesheet" href="/static/style.css" />
 
 <section>
-    <div class="sign-up-section text-center" id="reg">
+    <div class="sign-up-section text-center">
         <div class="container">
             <div class="icon">
                 <div class="top">
-                    <img src="static/web/images/iconuser.png" alt="" />
+                    <img src="/static/web/images/iconuser.png" alt="" />
                     <span> ثبت نام </span>
                 </div>
                 <div class="bottom text-end">
@@ -41,6 +41,7 @@
                                 <div>
                                     <input type="text" class="form-control last d-inline-block total-price" placeholder="مجموع قیمت " aria-label="مجموع قیمت " value="{{ product.price }} تومان" disabled="true" />
                                 </div>
+                                {% if product.type != 'pack' %}
                                 <div class="coupon-input">
                                     <div class="input-group mb-3">
                                         <input type="text" name="coupon" id="coupon" class="form-control sale" placeholder="اعمال کد تخفیف" aria-label="اعمال کد تخفیف" aria-describedby="basic-addon1" onkeyup="this.parentElement.parentElement.querySelector('.error').style.display = 'none'" />
@@ -56,15 +57,16 @@
                                     <div class="text-success success"><small>کد تخفیف اعمال شد</small></div>
                                     <div class="text-danger error"><small>کد تخفیف نامعتبر می باشد</small></div>
                                 </div>
+                                {% endif %}
                             </div>
 
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" oninvalid="this.setCustomValidity('لطفا شرایط و ضوابط را قبول کنید')" onclick="setCustomValidity('')" required />
-                                <label class="form-check-label" for="flexCheckDefault"> <a href="/winter/term" target="_blank">شرایط و ضوابط</a> را می‌پذیرم. </label>
+                                <label class="form-check-label" for="flexCheckDefault"> <a href="/winter/term">شرایط و ضوابط</a> را می‌پذیرم.</label>
                             </div>
                             <div class="text-center">
                                 <a href="#">
-                                    <button class="right" id="payment-btn">ثبت نام و خرید</button>
+                                    <button class="right" id="payment-btn">ثبت نام فردی</button>
                                 </a>
                                 <a href="#">
                                     <button class="left" id="group-btn" onclick="addFields(); return false">ثبت نام گروهی</button>
@@ -82,4 +84,4 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script type="text/javascript">const price = {{ product.price }}; const discount = {{ discount.amount }};</script>
-<script src="static/script.js"></script>
+<script src="/static/script.js"></script>
