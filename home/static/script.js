@@ -11,9 +11,7 @@ function addFields() {
         return false
     }
 
-    try {
-        document.querySelector(".coupon-input").style.display = 'none'
-    } catch (e) {}
+    document.querySelector(".coupon-input").style.display = 'none'
 
     const inptus = `
         <div class="extra-field">
@@ -67,11 +65,9 @@ function removeFields(e) {
     if (extraFields.querySelectorAll('.extra-field').length == 1) {
         count = 2
         extraFields.innerHTML = ''
-        try {
-            document.querySelector(".coupon-input").style.display = 'block'
-        } catch (e) {}
+        document.querySelector(".coupon-input").style.display = 'block'
     }
-
+        
     if (!extraFields.querySelector('.extra-field')) {
         document.querySelector("#payment-btn").innerText = 'ثبت نام فردی'
         document.querySelector("#group-btn").innerText = 'ثبت نام گروهی'
