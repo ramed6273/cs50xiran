@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.core.exceptions import ValidationError
 from django_zarinpal.services import start_transaction, verify_transaction
-# from django.core.mail import send_mail
+from django.core.mail import send_mail
 from django_zarinpal.exceptions import ZarinpalException
 from django.core.validators import RegexValidator
 from django.contrib.auth.models import User
@@ -297,8 +297,8 @@ def send_sms(order):
         'Content-Type': 'application/json'
     }
     
-#     subject_str = "تأیید ثبت‌نام در دوره‌های زمستانه | CS50x Iran" #Email Subject
-#     from_email = settings.EAMIL_ADDRESS
+    subject_str = "تأیید ثبت‌نام در دوره‌های زمستانه | CS50x Iran" #Email Subject
+    from_email = settings.EAMIL_ADDRESS
     for customer in order.customers.all():
         payload = {
             "from": settings.SIGNAL_NUMBER,
@@ -310,4 +310,4 @@ def send_sms(order):
             "numbers": [customer.number]
         }
         requests.post(url, headers=headers, json=payload)
-#         send_mail(subject_str,payload["message"],from_email,[customer.email],fail_silently=False)
+        send_mail(subject_str,payload["message"],from_email,[customer.email],fail_silently=False)
