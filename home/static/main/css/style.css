@@ -985,4 +985,31 @@ body footer .copy-right {
 body footer .copy-right p {
   font-size: 24px;
 }
+.bottom-table {
+  margin: 40px auto;
+}
+
+.bottom-table .table {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.bottom-table .table tr:nth-child(odd) {
+  background-color: #a51c30;
+  color: #fff;
+}
+
+.bottom-table .table tr:nth-child(even) {
+  background-color: #fff;
+}
+
+.bottom-table .table > :not(caption) > * > * {
+  padding: 1.2rem 0.5rem;
+}
+
+@media screen and (max-width: 500px) {
+  .bottom-table .table > :not(caption) > * > * {
+    font-size: 14px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
