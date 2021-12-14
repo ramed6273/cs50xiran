@@ -16,7 +16,13 @@ class OrderAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Order, OrderAdmin)
-admin.site.register(Coupon)
+
+class CouponAdmin(admin.ModelAdmin):
+    list_display = ['code', 'amount', 'type', 'owner', 'max_use']
+
+
+admin.site.register(Coupon, CouponAdmin)
+
 admin.site.register(Discount)
 
 
