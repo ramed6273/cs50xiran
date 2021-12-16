@@ -122,7 +122,7 @@ def payment(request):
             price -= discount.amount * customers_count
 
         # Process coupon code
-        if coupon and not is_group and product.type != 'pack':
+        if coupon and not is_group:
             try:
                 coupon = Coupon.objects.get(code=coupon)
                 if coupon.is_expired:
