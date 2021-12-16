@@ -41,7 +41,7 @@
                                 <div>
                                     <input type="text" class="form-control last d-inline-block total-price" placeholder="مجموع قیمت " aria-label="مجموع قیمت " value="{{ product.price }} تومان" disabled="true" />
                                 </div>
-                                {% if product.type != 'pack' %}
+<!--                                 {% if product.type != 'pack' %} -->
                                 <div class="coupon-input">
                                     <div class="input-group mb-3">
                                         <input type="text" name="coupon" id="coupon" class="form-control sale" placeholder="اعمال کد تخفیف" aria-label="اعمال کد تخفیف" aria-describedby="basic-addon1" onkeyup="this.parentElement.parentElement.querySelector('.error').style.display = 'none'" />
@@ -58,7 +58,7 @@
                                     <div class="text-danger error"><small>کد تخفیف نامعتبر می باشد</small></div>
 
                                 </div>
-                                 {% endif %}
+<!--                                  {% endif %} -->
                             </div>
 
                             <div class="form-check">
