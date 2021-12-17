@@ -162,12 +162,12 @@
   .splide__arrows {
     display: none;
   }
-  .online-course-section article:nth-child(3) {
+/*   .online-course-section article:nth-child(3) {
     display: none;
-  }
-  .online-course-section article:nth-child(4) {
+  } */
+/*   .online-course-section article:nth-child(4) {
     display: none;
-  }
+  } */
 }
 
 @media screen and (max-width: 575px) {
