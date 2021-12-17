@@ -308,12 +308,12 @@
     margin-top: 0px;
     text-align: center;
   }
-  .online-course-section article:nth-child(3) {
+/*   .online-course-section article:nth-child(3) {
     display: none;
-  }
-  .online-course-section article:nth-child(4) {
+  } */
+/*   .online-course-section article:nth-child(4) {
     display: none;
-  }
+  } */
   body main section .online-course-section {
     margin-top: -106px;
     position: relative;
