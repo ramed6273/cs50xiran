@@ -134,19 +134,8 @@ def payment(request):
                 if coupon.type == 'OT':
                     if coupon.owner.email != emails[0]:
                         raise Exception
-
-                    price -= coupon.amount
-                    coupon.is_expired = True
-                    coupon.save()
-                # Limited and Free
-                elif coupon.type == 'LT' or coupon.type == 'FR':
-                    price -= coupon.amount
-                    if coupon.max_use == 1:
-                        coupon.is_expired = True
-                        coupon.save()
-                    else:
-                        coupon.max_use -= 1
-                        coupon.save()
+                    
+                price -= coupon.amount
             except:
                 return index(request, error="Invalid coupon code")
         else:
@@ -197,7 +186,8 @@ def payment(request):
         order = Order(
             buyer=customers[0],
             product=product,
-            transaction=transaction
+            transaction=transaction,
+            coupon=coupon
         )
         order.save()
         [order.customers.add(customer) for customer in customers]
@@ -279,6 +269,19 @@ def validate_payment(request):
     order.save()
 
     if is_success:
+        coupon = order.coupon
+        if coupon:
+            if coupon.type == 'OT':
+                coupon.is_expired = True
+                coupon.save()
+            else:
+                if coupon.max_use == 1:
+                    coupon.is_expired = True
+                    coupon.save()
+                else:
+                    coupon.max_use -= 1
+                    coupon.save()
+
         send_sms(order)
     else:
         customers = []
