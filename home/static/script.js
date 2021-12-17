@@ -41,8 +41,8 @@ function addFields() {
         </div>
     `
 
-    if (extraFields.length == 0)
-        count = 2
+//     if (extraFields.length == 0)
+//         count = 2
 
     $("#extra-fields").append(inptus.repeat(count))
 
@@ -63,7 +63,7 @@ function removeFields(e) {
     extraFields.removeChild(e.parentElement)
 
     if (extraFields.querySelectorAll('.extra-field').length == 1) {
-        count = 2
+//         count = 2
         extraFields.innerHTML = ''
         document.querySelector(".coupon-input").style.display = 'block'
     }
