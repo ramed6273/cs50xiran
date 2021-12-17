@@ -41,10 +41,10 @@ function addFields() {
         </div>
     `
 
-//     if (extraFields.length == 0)
-//         count = 2
+    if (extraFields.length == 0)
+        count = 2
 
-    $("#extra-fields").append(inptus.repeat(count))
+    $("#extra-fields").append(inptus)
 
     document.querySelector("#payment-btn").innerText = 'ثبت‌نام و خرید'
     document.querySelector("#group-btn").innerText = 'افزودن فرد دیگر'
@@ -53,7 +53,7 @@ function addFields() {
         document.querySelector(".total-price").value = `رایگان`
         return
     }
-    currentPrice += (price * count) - (discount * (count == 2 ? 3 : count))
+    currentPrice += price - (discount * count)
     document.querySelector(".total-price").value = `${currentPrice - couponAmount} تومان`
 }
 
