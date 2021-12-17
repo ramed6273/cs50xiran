@@ -96,10 +96,10 @@ def payment(request):
                 len(numbers) != customers_count):
             return index(request, error="Invalid number of names or emails")
 
-        if customers_count > 20 or customers_count == 2:
+        if customers_count > 20:
             return HttpResponse(status=400)
 
-        if customers_count >= 3:
+        if customers_count >= 2:
             is_group = True
 
         for i in range(customers_count):
