@@ -181,12 +181,12 @@
   .splide__arrows {
     display: none;
   }
-  .online-course-section article:nth-child(3) {
+/*   .online-course-section article:nth-child(3) {
     display: none;
-  }
-  .online-course-section article:nth-child(4) {
+  } */
+/*   .online-course-section article:nth-child(4) {
     display: none;
-  }
+  } */
   body main section .sign-up-section .bottom .bottom-center a button {
     background-color: #a51c30;
     border: 2px solid #a51c30;
