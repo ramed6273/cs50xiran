@@ -57,6 +57,8 @@ def pack(request):
 
 def about_us(request):
     return render(request, 'home/about-us/index.html')
+
+
 def term(request):
     return render(request, 'home/about-us/term.html')
 
@@ -132,21 +134,19 @@ def payment(request):
                 if coupon.type == 'OT':
                     if coupon.owner.email != emails[0]:
                         raise Exception
-                    
-                price -= coupon.amount
 
-#                     price -= coupon.amount
-#                     coupon.is_expired = True
-#                     coupon.save()
-#                 # Limited and Free
-#                 elif coupon.type == 'LT' or coupon.type == 'FR':
-#                     price -= coupon.amount
-#                     if coupon.max_use == 1:
-#                         coupon.is_expired = True
-#                         coupon.save()
-#                     else:
-#                         coupon.max_use -= 1
-#                         coupon.save()
+                    price -= coupon.amount
+                    coupon.is_expired = True
+                    coupon.save()
+                # Limited and Free
+                elif coupon.type == 'LT' or coupon.type == 'FR':
+                    price -= coupon.amount
+                    if coupon.max_use == 1:
+                        coupon.is_expired = True
+                        coupon.save()
+                    else:
+                        coupon.max_use -= 1
+                        coupon.save()
             except:
                 return index(request, error="Invalid coupon code")
         else:
@@ -197,8 +197,7 @@ def payment(request):
         order = Order(
             buyer=customers[0],
             product=product,
-            transaction=transaction,
-            coupon=coupon
+            transaction=transaction
         )
         order.save()
         [order.customers.add(customer) for customer in customers]
@@ -280,19 +279,6 @@ def validate_payment(request):
     order.save()
 
     if is_success:
-        coupon = order.coupon
-        if coupon:
-            if coupon.type == 'OT':
-                coupon.is_expired = True
-                coupon.save()
-            else:
-                if coupon.max_use == 1:
-                    coupon.is_expired = True
-                    coupon.save()
-                else:
-                    coupon.max_use -= 1
-                    coupon.save()
-                    
         send_sms(order)
     else:
         customers = []
@@ -312,18 +298,18 @@ def send_sms(order):
         'Authorization': f'Bearer {settings.SIGNAL_TOKEN}',
         'Content-Type': 'application/json'
     }
-    
-    subject_str = "تأیید ثبت‌نام در دوره‌های زمستانه | CS50x Iran" #Email Subject
+
+    subject_str = "تأیید ثبت‌نام در دوره‌های زمستانه | CS50x Iran"  # Email Subject
     from_email = settings.EAMIL_ADDRESS
     for customer in order.customers.all():
         payload = {
             "from": settings.SIGNAL_NUMBER,
             "message": customer.firstname + " عزیز" + '\n\n'
-                    f'ثبت نام شما در  دوره‌ی {order.product.get_type_display()} انجام شد. کد پیگیری شما {order.transaction.order_number} است.' + '\n\n'
-                    "اطلاعات ورود به پنل کاربری را یک هفته قبل از شروع دوره برای شما ارسال خواهیم کرد." + '\n\n'
-                    "سی‌اس‌فیفتی ایران" + '\n\n'
-                    "cs50x.ir" + '\n\n',
+                                                      f'ثبت نام شما در  دوره‌ی {order.product.get_type_display()} انجام شد. کد پیگیری شما {order.transaction.order_number} است.' + '\n\n'
+                                                                                                                                                                                   "اطلاعات ورود به پنل کاربری را یک هفته قبل از شروع دوره برای شما ارسال خواهیم کرد." + '\n\n'
+                                                                                                                                                                                                                                                                         "سی‌اس‌فیفتی ایران" + '\n\n'
+                                                                                                                                                                                                                                                                                               "cs50x.ir" + '\n\n',
             "numbers": [customer.number]
         }
         requests.post(url, headers=headers, json=payload)
-        send_mail(subject_str,payload["message"],from_email,[customer.email],fail_silently=False)
+        send_mail(subject_str, payload["message"], from_email, [customer.email], fail_silently=False)
