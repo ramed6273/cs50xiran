@@ -11,8 +11,6 @@ function addFields() {
         return false
     }
 
-   
-
     const inptus = `
         <div class="extra-field">
             <hr/>
@@ -44,7 +42,7 @@ function addFields() {
     if (extraFields.length == 0)
         count = 2
 
-    $("#extra-fields").append(inptus.repeat(count))
+    $("#extra-fields").append(inptus)
 
     document.querySelector("#payment-btn").innerText = 'ثبت‌نام و خرید'
     document.querySelector("#group-btn").innerText = 'افزودن فرد دیگر'
@@ -53,7 +51,7 @@ function addFields() {
         document.querySelector(".total-price").value = `رایگان`
         return
     }
-    currentPrice += (price * count) - (discount * (count == 2 ? 3 : count))
+    currentPrice += price - (discount * count)
     document.querySelector(".total-price").value = `${currentPrice - couponAmount} تومان`
 }
 
@@ -62,12 +60,11 @@ function removeFields(e) {
     const extraFields = document.querySelector('#extra-fields')
     extraFields.removeChild(e.parentElement)
 
-    if (extraFields.querySelectorAll('.extra-field').length == 1) {
+    if (extraFields.querySelectorAll('.extra-field').length == 0) {
         count = 2
         extraFields.innerHTML = ''
-        
     }
-
+        
     if (!extraFields.querySelector('.extra-field')) {
         document.querySelector("#payment-btn").innerText = 'ثبت نام فردی'
         document.querySelector("#group-btn").innerText = 'ثبت نام گروهی'
@@ -77,7 +74,7 @@ function removeFields(e) {
         document.querySelector(".total-price").value = `رایگان`
         return
     }
-    currentPrice -= (price * count) - (discount * (count == 2 ? 3 : count))
+    currentPrice -= price - (discount * count)
     document.querySelector(".total-price").value = `${currentPrice - couponAmount} تومان`
 }
 
