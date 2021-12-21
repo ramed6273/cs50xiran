@@ -1568,4 +1568,68 @@ body main section .questions-section {
     font-size: 14px;
   }
 }
+body main section .gallery-section {
+  position: relative;
+  background-color: #f6f6f6;
+  padding-top: 50px;
+}
+
+body main section .gallery-section hr {
+  margin-top: 0;
+}
+
+body main section .gallery-section .gallery {
+  display: inline-block;
+  position: relative;
+  border-radius: 16px !important;
+  margin-top: 17px;
+  overflow: hidden;
+  z-index: 20;
+}
+
+body main section .gallery-section .gallery img {
+  width: 100%;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+body main section .gallery-section .gallery .title-bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 30, 0.5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 20px;
+  text-align: right;
+}
+
+body main section .gallery-section .gallery .title-bg span {
+  color: #fff;
+}
+
+body main section .gallery-section .gallery:hover .title-bg {
+  display: none;
+}
+
+body main section .gallery-section .show-more {
+  background-color: transparent;
+  border: none;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+body main section .gallery-section .show-more span {
+  display: block;
+  margin-bottom: 10px;
+}
+hr {
+  width: 35px;
+  height: 3px !important;
+  color: #a51c30;
+  margin: 20px auto;
+  opacity: 1;
+}
 /*# sourceMappingURL=style.css.map */
