@@ -56,8 +56,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </li>
 <!--                     <li class="nav-item">
                         <a class="nav-link" href="https://cs50x.ir/aboutus">درباره ما</a>
-                    </li> -->
-<!--                     <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="https://cs50x.ir/team">تیم ما</a>
                     </li> -->
                 </ul>
@@ -416,7 +416,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                         </div>
 
 
-                                        <div class="accordion-item hide">
+
                                             <div class="accordion-item">
                                             <h2 class="accordion-header" id="flush-headingfour">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefour" aria-expanded="false" aria-controls="flush-collapsefour">
@@ -446,6 +446,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                                 </div>
                                             </div>
                                         </div>
+                                       <div class="accordion-item">
                                             <h2 class="accordion-header" id="flush-headingfive2">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefive1" aria-expanded="false" aria-controls="flush-collapsefive1">
                                                       مدرک دوره را چگونه تأیید اعتبار کنم؟
@@ -457,6 +458,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                                     <p>
                                                         مدرکی که به شما داده می‌شود تحت لینک cs50 هاروارد است که در دامنه خود دانشگاه هاروارد بارگزاری می‌شود.
                                                     </p>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <br />
@@ -476,20 +478,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                                 </div>
                                             </div>
                                         </div>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="text-center">
-                        <button type="button" onclick="showMore('.hide','hide')" class="show-more">
-                            <span>نمایش سوالات بیشتر</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="7" viewBox="0 0 17 7" fill="none">
-                                <path d="M16 1L8.85714 6L1 1" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
+
                     <img class="icon" src="static/web/images/dunddun!!.png" alt="" />
                     <div class="bottom-table text-center">
                       <div class="container">
@@ -549,24 +544,137 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             </section>
-            <section>
-                <div class="our-group-section">
-                    <img src="static/web/images/team.jpg" alt="" />
-                    <div class="overlay">
-                        <img src="static/web/images/Rectangle1330.png" alt="" class="icon" />
-                        <div class="container"></div>
-                        <div class="text text-center">
-                            <h2>{{ setting_web.who_are_we_title }}</h2>
-                            <p>
-                                {{ setting_web.who_are_we_description1 }} <br />
-                              {{ setting_web.who_are_we_description2 }}
-                            </p>
-                            <a href="/winter/#gallery">
-                                <button>
-                                    تصاویر دوره‌های قبل
-                                </button>
-                            </a>
+            <section id="gallery">
+                <div class="gallery-section">
+                    <div class="container">
+                        <div class="text-center">
+                            <hr />
+                            <h3>تصاویر دوره تابستان</h3>
                         </div>
+                        <div class="row mt-4 d-lg-flex d-none">
+                            <div class="col-lg-4">
+                                <div class="col-lg-12">
+                                    <a type="button" class="gallery">
+                                        <img src="static/pack/images/MaskGroup.png" alt="" />
+                                        <div class="title-bg">
+                                            <span>آشنایی با علوم کامپیوتر و</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-12">
+                                    <a type="button" class="gallery">
+                                        <img src="static/pack/images/MaskGroup-4.png" alt="" />
+                                        <div class="title-bg">
+                                            <span>آشنایی با علوم کامپیوتر و</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="col-lg-12">
+                                    <a type="button" class="gallery">
+                                        <img src="static/pack/images/MaskGroup-2.png" alt="" />
+                                        <div class="title-bg">
+                                            <span>آشنایی با علوم کامپیوتر و</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-12">
+                                    <a type="button" class="gallery">
+                                        <img src="static/pack/images/MaskGroup-5.png" alt="" />
+                                        <div class="title-bg">
+                                            <span>آشنایی با علوم کامپیوتر و</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="col-lg-12">
+                                    <a type="button" class="gallery">
+                                        <img src="static/pack/images/MaskGroup-1.png" alt="" />
+                                        <div class="title-bg">
+                                            <span>آشنایی با علوم کامپیوتر و</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <a type="button" class="gallery">
+                                        <img src="static/pack/images/MaskGroup-3.png" alt="" />
+                                        <div class="title-bg">
+                                            <span>آشنایی با علوم کامپیوتر و</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 hide1">
+                                <div class="col-lg-12">
+                                    <a type="button" class="gallery">
+                                        <img src="static/pack/images/MaskGroup-3.png" alt="" />
+                                        <div class="title-bg">
+                                            <span>آشنایی با علوم کامپیوتر و</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4 d-lg-none d-flex">
+                            <div class="col-6">
+                                <div class="col-12">
+                                    <a type="button" class="gallery">
+                                        <img src="static/pack/images/MaskGroup.png" alt="" />
+                                        <div class="title-bg">
+                                            <span>آشنایی با علوم کامپیوتر و</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-12">
+                                    <a type="button" class="gallery">
+                                        <img src="static/pack/images/MaskGroup-4.png" alt="" />
+                                        <div class="title-bg">
+                                            <span>آشنایی با علوم کامپیوتر و</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="col-12">
+                                    <a type="button" class="gallery">
+                                        <img src="static/pack/images/MaskGroup-2.png" alt="" />
+                                        <div class="title-bg">
+                                            <span>آشنایی با علوم کامپیوتر و</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-12">
+                                    <a type="button" class="gallery">
+                                        <img src="static/pack/images/MaskGroup-5.png" alt="" />
+                                        <div class="title-bg">
+                                            <span>آشنایی با علوم کامپیوتر و</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <a type="button" class="gallery">
+                                    <img src="static/pack/images/MaskGroup-5.png" alt="" />
+                                    <div class="title-bg">
+                                        <span>آشنایی با علوم کامپیوتر و</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-4 hide1">
+                                <div class="col-lg-12">
+                                    <a type="button" class="gallery">
+                                        <img src="static/pack/images/MaskGroup-3.png" alt="" />
+                                        <div class="title-bg">
+                                            <span>آشنایی با علوم کامپیوتر و</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div><br /><br /><br /><br /><br /><br /><br /><br />
+
                     </div>
                 </div>
             </section>
