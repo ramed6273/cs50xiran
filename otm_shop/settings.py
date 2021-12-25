@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_jalali',
     'django_zarinpal',
-    'home'
+    'home',
+    'django.contrib.humanize'
 ]
 
 MIDDLEWARE = [
