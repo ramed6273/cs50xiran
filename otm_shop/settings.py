@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': 'cs50x',
         'USER': 'root',
         'PASSWORD': 'sfjlkjIUOILUOIRUEROI8098039UOUsfjlkjIUOILUOIRUEROI8098039UOU',
-        'HOST': 'localhost',
+        'HOST': 'mariadb',
         'PORT': '3306',
         'OPTIONS' : {
             'sql_mode' : 'STRICT_ALL_TABLES'
