@@ -1,16 +1,151 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404, HttpResponseRedirect, reverse
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ValidationError
 from django_zarinpal.services import start_transaction, verify_transaction
 from django.core.mail import send_mail
 from django_zarinpal.exceptions import ZarinpalException
 from django.core.validators import RegexValidator
 from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.conf import settings
 from datetime import datetime
 from django import forms
 from .models import *
+from account.models import User
 import requests
 import json
+
+
+# Pages
+@login_required
+def web_class(request):
+    web_sessions = Web_sessions.objects.all()
+    context = {
+        'web_sessions': web_sessions
+    }
+    if request.user.web:
+        return render(request, 'home/web/web.html', context)
+    else:
+        return HttpResponseRedirect(reverse('profile'))
+
+
+@login_required
+def ai_class(request):
+    ai_sessions = Ai_sessions.objects.all()
+    context = {
+        'ai_sessions': ai_sessions
+    }
+    if request.user.ai:
+        return render(request, 'home/ai/ai.html', context)
+    else:
+        return HttpResponseRedirect(reverse('profile'))
+
+@login_required
+def ai_guide(request):
+    context = {}
+    if request.user.ai:
+        return render(request, 'home/ai/guide.html', context)
+    else:
+        return HttpResponseRedirect(reverse('profile'))
+
+@login_required
+def android_class(request):
+    android_sessions = Android_sessions.objects.all()
+    context = {
+        'android_sessions': android_sessions
+    }
+    if request.user.android:
+        return render(request, 'home/android/android.html', context)
+    else:
+        return HttpResponseRedirect(reverse('profile'))
+
+@login_required
+def android_guide(request):
+    context = {}
+    if request.user.ai:
+        return render(request, 'home/ai/guide.html', context)
+    else:
+        return HttpResponseRedirect(reverse('profile'))
+
+@login_required
+def android_class_sessions(request, session_id):
+    session = get_object_or_404(Android_sessions, pk=session_id)
+    context = {
+        'session': session
+    }
+    t = session.session_status
+    if t:
+        return render(request, 'home/android/details.html', context)
+    else:
+        return HttpResponseRedirect(reverse("ai_class"))
+
+
+@login_required
+def ai_class_sessions(request, session_id):
+    session = get_object_or_404(Ai_sessions, pk=session_id)
+    context = {
+        'session': session
+    }
+    t = session.session_status
+    if t:
+        return render(request, 'home/ai/details.html', context)
+    else:
+        return HttpResponseRedirect(reverse("ai_class"))
+
+
+@login_required
+def web_class_sessions(request, session_id):
+    session = get_object_or_404(Web_sessions, pk=session_id)
+    context = {
+        'session': session
+    }
+    t = session.session_status
+    if t:
+        return render(request, 'home/web/details.html', context)
+    else:
+        return HttpResponseRedirect(reverse("web_class"))
+
+
+# Main
+# def index(request):
+#     return render(request, 'home/main/index.html')
+
+
+def login_view(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        user = authenticate(request, email=email, password=password)
+        if user is not None:
+            # Successfully login
+            login(request, user)
+            if request.GET.get("next"):
+                return HttpResponseRedirect(request.GET.get("next"))
+            return HttpResponseRedirect(reverse("profile"))
+        else:
+            context = {
+                "email": email,
+            }
+    else:
+        if request.user.is_authenticated:
+            return HttpResponseRedirect(reverse("profile"))
+
+        context = {}
+    return render(request, "home/signin/index.html", context)
+
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect(reverse("index"))
+
+
+@login_required
+def profile(request):
+    return render(request, 'home/profile/index.html')
+
+
+
 
 
 # Main Views
@@ -155,9 +290,9 @@ def payment(request):
         # Create transaction
         transaction = None
         try:
-            default_user = User.objects.get(username="default")
+            default_user = User.objects.get(email="default")
         except:
-            default_user = User.objects.create(username="default")
+            default_user = User.objects.create(email="default")
 
         if not coupon or coupon.type != 'FR':
             transaction_url = start_transaction(
