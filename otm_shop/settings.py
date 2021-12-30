@@ -27,11 +27,13 @@ SECRET_KEY = 'django-insecure-=4yt*66$ach1c64v*bxc5%1dc_=g@&_-=xo3&j=7fg9hq$ob89
 HASHID_FIELD_SALT = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['cs50x.ir', 'www.cs50x.ir', 'cs50x.ir/winter', 'www.cs50x.ir/winter', 'localhost']
 
 
 # Application definition
+
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -42,7 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_jalali',
     'django_zarinpal',
-    'home',
+    'ckeditor',
+    'home.apps.HomeConfig',
+    'account.apps.AccountConfig',
     'django.contrib.humanize'
 ]
 
@@ -86,7 +90,7 @@ DATABASES = {
         'NAME': 'cs50x',
         'USER': 'root',
         'PASSWORD': 'sfjlkjIUOILUOIRUEROI8098039UOUsfjlkjIUOILUOIRUEROI8098039UOU',
-        'HOST': 'mariadb',
+        'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS' : {
             'sql_mode' : 'STRICT_ALL_TABLES'
@@ -146,12 +150,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'account.User'
 
 ZARINPAL_CALLBACK_URL = "https://cs50x.ir/winter/validate_payment"
 
 ZARINPAL_VERIFY_TRANSACTION_VIEW = ZARINPAL_CALLBACK_URL
 
-ZARINPAL_SIMULATION = False
+ZARINPAL_SIMULATION = True
 
 ZARINPAL_MERCHANT_ID = "de532b57-0df0-45c5-8047-3143502165bb"
 
