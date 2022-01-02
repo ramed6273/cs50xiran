@@ -21,257 +21,257 @@ import json
 
 
 # Pages
-@login_required
-def web_class(request):
-    web_sessions = Web_sessions.objects.all()
-    context = {
-        'web_sessions': web_sessions
-    }
-    if request.user.complete_profile:
-        if request.user.web:
-            return render(request, 'home/web/web.html', context)
-    else:
-        return HttpResponseRedirect(reverse('profile_edite'))
+# @login_required
+# def web_class(request):
+#     web_sessions = Web_sessions.objects.all()
+#     context = {
+#         'web_sessions': web_sessions
+#     }
+#     if request.user.complete_profile:
+#         if request.user.web:
+#             return render(request, 'home/web/web.html', context)
+#     else:
+#         return HttpResponseRedirect(reverse('profile_edite'))
 
 
-@login_required
-def ai_class(request):
-    ai_sessions = Ai_sessions.objects.all()
-    context = {
-        'ai_sessions': ai_sessions
-    }
-    if request.user.complete_profile:
-        if request.user.ai:
-            return render(request, 'home/ai/ai.html', context)
-    else:
-        return HttpResponseRedirect(reverse('profile_edite'))
+# @login_required
+# def ai_class(request):
+#     ai_sessions = Ai_sessions.objects.all()
+#     context = {
+#         'ai_sessions': ai_sessions
+#     }
+#     if request.user.complete_profile:
+#         if request.user.ai:
+#             return render(request, 'home/ai/ai.html', context)
+#     else:
+#         return HttpResponseRedirect(reverse('profile_edite'))
 
 
-@login_required
-def android_class(request):
-    android_sessions = Android_sessions.objects.all()
-    context = {
-        'android_sessions': android_sessions
-    }
-    if request.user.complete_profile:
-        if request.user.android:
-            return render(request, 'home/android/android.html', context)
-    else:
-        return HttpResponseRedirect(reverse('profile_edite'))
+# @login_required
+# def android_class(request):
+#     android_sessions = Android_sessions.objects.all()
+#     context = {
+#         'android_sessions': android_sessions
+#     }
+#     if request.user.complete_profile:
+#         if request.user.android:
+#             return render(request, 'home/android/android.html', context)
+#     else:
+#         return HttpResponseRedirect(reverse('profile_edite'))
 
 
-@login_required
-def android_class_sessions(request, session_id):
-    session = get_object_or_404(Android_sessions, pk=session_id)
-    context = {
-        'session': session
-    }
-    t = session.session_status
-    if t:
-        if request.user.complete_profile:
-            if request.user.android:
-                return render(request, 'home/android/details.html', context)
-    else:
-        return HttpResponseRedirect(reverse("ai_class"))
+# @login_required
+# def android_class_sessions(request, session_id):
+#     session = get_object_or_404(Android_sessions, pk=session_id)
+#     context = {
+#         'session': session
+#     }
+#     t = session.session_status
+#     if t:
+#         if request.user.complete_profile:
+#             if request.user.android:
+#                 return render(request, 'home/android/details.html', context)
+#     else:
+#         return HttpResponseRedirect(reverse("ai_class"))
 
 
-@login_required
-def ai_class_sessions(request, session_id):
-    session = get_object_or_404(Ai_sessions, pk=session_id)
-    context = {
-        'session': session
-    }
-    t = session.session_status
-    if t:
-        if request.user.complete_profile:
-            if request.user.ai:
-                return render(request, 'home/ai/details.html', context)
-    else:
-        return HttpResponseRedirect(reverse("ai_class"))
+# @login_required
+# def ai_class_sessions(request, session_id):
+#     session = get_object_or_404(Ai_sessions, pk=session_id)
+#     context = {
+#         'session': session
+#     }
+#     t = session.session_status
+#     if t:
+#         if request.user.complete_profile:
+#             if request.user.ai:
+#                 return render(request, 'home/ai/details.html', context)
+#     else:
+#         return HttpResponseRedirect(reverse("ai_class"))
 
 
-@login_required
-def web_class_sessions(request, session_id):
-    session = get_object_or_404(Web_sessions, pk=session_id)
-    context = {
-        'session': session
-    }
-    t = session.session_status
-    if t:
-        if request.user.complete_profile:
-            if request.user.web:
-                return render(request, 'home/web/details.html', context)
-    else:
-        return HttpResponseRedirect(reverse("web_class"))
+# @login_required
+# def web_class_sessions(request, session_id):
+#     session = get_object_or_404(Web_sessions, pk=session_id)
+#     context = {
+#         'session': session
+#     }
+#     t = session.session_status
+#     if t:
+#         if request.user.complete_profile:
+#             if request.user.web:
+#                 return render(request, 'home/web/details.html', context)
+#     else:
+#         return HttpResponseRedirect(reverse("web_class"))
 
 
-# # Main
-# def index(request):
-#     return render(request, 'home/main/index.html')
+# # # Main
+# # def index(request):
+# #     return render(request, 'home/main/index.html')
 
 
-def login_view(request):
-    if request.method == 'POST':
-        email = request.POST.get('email')
-        password = request.POST.get('password')
-        user = authenticate(request, email=email, password=password)
-        if user is not None:
-            # Successfully login
-            login(request, user)
-            if request.GET.get("next"):
-                return HttpResponseRedirect(request.GET.get("next"))
-            return HttpResponseRedirect(reverse("dashbord"))
-        else:
-            context = {
-                "email": email,
-            }
-    else:
-        if request.user.is_authenticated:
-            return HttpResponseRedirect(reverse("dashbord"))
+# def login_view(request):
+#     if request.method == 'POST':
+#         email = request.POST.get('email')
+#         password = request.POST.get('password')
+#         user = authenticate(request, email=email, password=password)
+#         if user is not None:
+#             # Successfully login
+#             login(request, user)
+#             if request.GET.get("next"):
+#                 return HttpResponseRedirect(request.GET.get("next"))
+#             return HttpResponseRedirect(reverse("dashbord"))
+#         else:
+#             context = {
+#                 "email": email,
+#             }
+#     else:
+#         if request.user.is_authenticated:
+#             return HttpResponseRedirect(reverse("dashbord"))
 
-        context = {}
-    return render(request, "home/signin/index.html", context)
-
-
-def logout_view(request):
-    logout(request)
-    return HttpResponseRedirect(reverse("dashbord"))
+#         context = {}
+#     return render(request, "home/signin/index.html", context)
 
 
-@login_required
-def dashbord(request):
-    return render(request, 'home/profile/dashbord.html')
+# def logout_view(request):
+#     logout(request)
+#     return HttpResponseRedirect(reverse("dashbord"))
 
 
-@login_required
-def ai_class_sessions_description(request, session_id):
-    session = get_object_or_404(Ai_sessions, pk=session_id)
-    t = session.session_status
-    context = {
-        'session': session
-    }
-    if request.user.complete_profile:
-        if request.user.ai:
-            if t:
-                return render(request, "home/ai/ai_class_sessions_description.html", context)
-            else:
-                return HttpResponseRedirect(reverse('ai_class'))
-    else:
-        return HttpResponseRedirect(reverse('ai_class'))
+# @login_required
+# def dashbord(request):
+#     return render(request, 'home/profile/dashbord.html')
 
 
-@login_required
-def ai_class_sessions_question(request, session_id):
-    session = get_object_or_404(Ai_sessions, pk=session_id)
-    t = session.session_status
-    context = {
-        'session': session
-    }
-    if request.user.complete_profile:
-        if request.user.ai:
-            if t:
-                return render(request, "home/ai/ai_class_sessions_question.html", context)
-            else:
-                return HttpResponseRedirect(reverse('ai_class'))
-    else:
-        return HttpResponseRedirect(reverse('ai_class'))
+# @login_required
+# def ai_class_sessions_description(request, session_id):
+#     session = get_object_or_404(Ai_sessions, pk=session_id)
+#     t = session.session_status
+#     context = {
+#         'session': session
+#     }
+#     if request.user.complete_profile:
+#         if request.user.ai:
+#             if t:
+#                 return render(request, "home/ai/ai_class_sessions_description.html", context)
+#             else:
+#                 return HttpResponseRedirect(reverse('ai_class'))
+#     else:
+#         return HttpResponseRedirect(reverse('ai_class'))
 
 
-@login_required
-def web_class_sessions_description(request, session_id):
-    session = get_object_or_404(Web_sessions, pk=session_id)
-    t = session.session_status
-    context = {
-        'session': session
-    }
-    if request.user.complete_profile:
-        if request.user.web:
-            if t:
-                return render(request, "home/web/web_class_sessions_description.html", context)
-            else:
-                return HttpResponseRedirect(reverse('web_class'))
-    else:
-        return HttpResponseRedirect(reverse('web_class'))
+# @login_required
+# def ai_class_sessions_question(request, session_id):
+#     session = get_object_or_404(Ai_sessions, pk=session_id)
+#     t = session.session_status
+#     context = {
+#         'session': session
+#     }
+#     if request.user.complete_profile:
+#         if request.user.ai:
+#             if t:
+#                 return render(request, "home/ai/ai_class_sessions_question.html", context)
+#             else:
+#                 return HttpResponseRedirect(reverse('ai_class'))
+#     else:
+#         return HttpResponseRedirect(reverse('ai_class'))
 
 
-@login_required
-def web_class_sessions_question(request, session_id):
-    session = get_object_or_404(Web_sessions, pk=session_id)
-    t = session.session_status
-    context = {
-        'session': session
-    }
-    if request.user.complete_profile:
-        if request.user.web:
-            if t:
-                return render(request, "home/web/web_class_sessions_question.html", context)
-            else:
-                return HttpResponseRedirect(reverse('web_class'))
-    else:
-        return HttpResponseRedirect(reverse('web_class'))
+# @login_required
+# def web_class_sessions_description(request, session_id):
+#     session = get_object_or_404(Web_sessions, pk=session_id)
+#     t = session.session_status
+#     context = {
+#         'session': session
+#     }
+#     if request.user.complete_profile:
+#         if request.user.web:
+#             if t:
+#                 return render(request, "home/web/web_class_sessions_description.html", context)
+#             else:
+#                 return HttpResponseRedirect(reverse('web_class'))
+#     else:
+#         return HttpResponseRedirect(reverse('web_class'))
 
 
-@login_required
-def android_class_sessions_description(request, session_id):
-    session = get_object_or_404(Android_sessions, pk=session_id)
-    t = session.session_status
-    context = {
-        'session': session
-    }
-    if request.user.complete_profile:
-        if request.user.android:
-            if t:
-                return render(request, "home/android/android_class_sessions_description.html", context)
-            else:
-                return HttpResponseRedirect(reverse('android_class'))
-    else:
-        return HttpResponseRedirect(reverse('android_class'))
+# @login_required
+# def web_class_sessions_question(request, session_id):
+#     session = get_object_or_404(Web_sessions, pk=session_id)
+#     t = session.session_status
+#     context = {
+#         'session': session
+#     }
+#     if request.user.complete_profile:
+#         if request.user.web:
+#             if t:
+#                 return render(request, "home/web/web_class_sessions_question.html", context)
+#             else:
+#                 return HttpResponseRedirect(reverse('web_class'))
+#     else:
+#         return HttpResponseRedirect(reverse('web_class'))
 
 
-@login_required
-def android_class_sessions_question(request, session_id):
-    session = get_object_or_404(Android_sessions, pk=session_id)
-    t = session.session_status
-    context = {
-        'session': session
-    }
-    if request.user.complete_profile:
-        if request.user.android:
-            if t:
-                return render(request, "home/android/android_class_sessions_question.html", context)
-            else:
-                return HttpResponseRedirect(reverse('android_class'))
-    else:
-        return HttpResponseRedirect(reverse('android_class'))
+# @login_required
+# def android_class_sessions_description(request, session_id):
+#     session = get_object_or_404(Android_sessions, pk=session_id)
+#     t = session.session_status
+#     context = {
+#         'session': session
+#     }
+#     if request.user.complete_profile:
+#         if request.user.android:
+#             if t:
+#                 return render(request, "home/android/android_class_sessions_description.html", context)
+#             else:
+#                 return HttpResponseRedirect(reverse('android_class'))
+#     else:
+#         return HttpResponseRedirect(reverse('android_class'))
 
 
-def profile(request):
-    return render(request, 'home/profile/profile.html')
+# @login_required
+# def android_class_sessions_question(request, session_id):
+#     session = get_object_or_404(Android_sessions, pk=session_id)
+#     t = session.session_status
+#     context = {
+#         'session': session
+#     }
+#     if request.user.complete_profile:
+#         if request.user.android:
+#             if t:
+#                 return render(request, "home/android/android_class_sessions_question.html", context)
+#             else:
+#                 return HttpResponseRedirect(reverse('android_class'))
+#     else:
+#         return HttpResponseRedirect(reverse('android_class'))
 
 
-@login_required
-def profile_edite(request):
-    form = UpdateAccount(instance=request.user)
-    if request.method == 'POST':
-        form = UpdateAccount(request.POST, instance=request.user)
-        if form.is_valid():
-            request.user.complete_profile = True
-            form.save()
-            return HttpResponseRedirect(reverse('dashbord'))
-    return render(request, "home/profile/profile_edite.html", {'form': form})
+# def profile(request):
+#     return render(request, 'home/profile/profile.html')
 
 
-@login_required
-def change_password(request):
-    if request.method == "POST":
-        form = PasswordChangeForm(request.user, request.POST)
-        if form.is_valid():
-            user = form.save()
-            update_session_auth_hash(request, user)
-            return redirect("profile")
-    else:
-        form = PasswordChangeForm(request.user)
-    return render(request, "home/profile/change_password.html", {"form": form})
+# @login_required
+# def profile_edite(request):
+#     form = UpdateAccount(instance=request.user)
+#     if request.method == 'POST':
+#         form = UpdateAccount(request.POST, instance=request.user)
+#         if form.is_valid():
+#             request.user.complete_profile = True
+#             form.save()
+#             return HttpResponseRedirect(reverse('dashbord'))
+#     return render(request, "home/profile/profile_edite.html", {'form': form})
+
+
+# @login_required
+# def change_password(request):
+#     if request.method == "POST":
+#         form = PasswordChangeForm(request.user, request.POST)
+#         if form.is_valid():
+#             user = form.save()
+#             update_session_auth_hash(request, user)
+#             return redirect("profile")
+#     else:
+#         form = PasswordChangeForm(request.user)
+#     return render(request, "home/profile/change_password.html", {"form": form})
 
 
 
