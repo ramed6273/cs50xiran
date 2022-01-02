@@ -153,11 +153,11 @@
 
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
-                <li><a href="static/profile/pages/forms/general.html"><i class="fa fa-edit" style="color:#a51c30;"></i> <span>ویرایش پروفایل</span></a></li>
-                <li><a href="https://adminlte.io/docs"><i class="fa fa-book" style="color: #a51c30;"></i> <span>سوالات متداول</span></a></li>
-                <li><a href="AI_class/ai_guide"><i class="fa fa-file-text-o" style="color: #a51c30;"></i> <span>راهنمای دوره</span></a></li>
-                <li><a href="AI_class/ai_guide"><i class="fa fa-certificate" style="color: #a51c30;"></i> <span>راهنمای دریافت سرتیفیکیت</span></a></li>
-                <li><a href="{% url 'logout' %}"><i class="fa fa-lock" style="color: #a51c30;"></i> <span>خروج</span></a></li>
+                 <li><a href="dashbord"><i class="fa fa-dashboard bg-white"></i> <span><b>داشبورد</b></span></a></li>
+                <li><a href="profile_edite"><i class="fa fa-edit bg-white"></i> <span><b>ویرایش پروفایل</b></span></a></li>
+                <li><a href="AI_class/ai_guide"><i class="fa fa-file-text-o bg-white"></i> <span><b style="color: green;">راهنمای دوره</b></span></a></li>
+                <li><a href="AI_class/ai_guide"><i class="fa fa-certificate bg-white"></i> <span><b style="color: green;">راهنمای دریافت سرتیفیکیت</b></span></a></li>
+                <li><a href="{% url 'logout' %}"><i class="fa fa-lock bg-white"></i> <span><b>خروج</b></span></a></li>
             </ul>
         </section>
         <!-- /.sidebar -->
@@ -197,7 +197,7 @@
                         {% endif %}
                     </div>
                         <div class="col-lg-6">
-                            <video width="300" height="170" poster="static/web/dist/img/photo3.jpg"></video>
+                            <video width="300" height="170" poster="{{ session.session_image }}"></video>
                         </div>
 
                     </div>
