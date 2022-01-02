@@ -38,8 +38,16 @@ class User(AbstractBaseUser):
     android = models.BooleanField(default=False, verbose_name='کلاس اندروید')
     web = models.BooleanField(default=False, verbose_name='کلاس وب')
     ai = models.BooleanField(default=False, verbose_name='کلاس هوش مصنوعی')
-
+    field = models.CharField('رشته تحصیلی', null=True, max_length=100)
+    age = models.PositiveIntegerField('سن', null=True)
+    address = models.TextField('ادرس', null=True)
+    city = models.CharField('شهر', max_length=100, null=True)
+    rezume = models.CharField('لینک رزومه', max_length=300, null=True, blank=True)
+    postal_code = models.PositiveIntegerField('کد پستی', null=True)
+    linked_in = models.CharField('لینکدین', max_length=100, null=True)
+    static_phone = models.PositiveIntegerField('تلفن ثابت', null=True)
     USERNAME_FIELD = 'email'
+    complete_profile = models.BooleanField('تکمیل پروفایل', default=False)
     REQUIRED_FIELDS = ['name', 'last_name', 'phone']
 
     class Meta:

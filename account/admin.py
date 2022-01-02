@@ -43,14 +43,17 @@ class UserChangeForm(forms.ModelForm):
 class UserAdmin(BaseUserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
-    list_display = ('email', 'name', 'last_name', 'phone', 'android', 'ai', 'web', 'is_active', 'is_admin')
+    list_display = ('email', 'name', 'last_name', 'phone', 'android', 'ai', 'web', 'is_active', 'is_admin','complete_profile')
     list_filter = ('is_admin', 'is_active', 'ai', 'web', 'android')
     fieldsets = (
         (None, {'fields': (
-            'phone', 'name', 'last_name', 'email', 'password', 'android', 'ai', 'web', 'is_active', 'is_admin')}),
+            'phone', 'name', 'last_name', 'email', 'password', 'android', 'ai', 'web', 'is_active', 'field',
+            'age', 'address', 'city', 'rezume', 'postal_code', 'linked_in', 'static_phone', 'is_admin')}),
     )
+
     add_fieldsets = (
-        (None, {'fields': ('phone', 'name', 'last_name', 'email', 'password1', 'password2')}),
+        (None, {'fields': (
+        'phone', 'name', 'last_name', 'email', 'password1', 'password2', 'android', 'ai', 'web', 'is_active')}),
     )
 
     search_fields = ('phone', 'email')
