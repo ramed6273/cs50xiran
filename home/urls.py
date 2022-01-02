@@ -16,7 +16,7 @@ urlpatterns = [
     path('verify_coupon', verify_coupon),
     path('validate_payment', validate_payment),
     path('payment_result', payment_result),
-path('accounts/login/', login_view, name='login'),
+    path('accounts/login/', login_view, name='login'),
     path('logout/', logout_view, name="logout"),
     path('dashbord', dashbord, name='dashbord'),
     path('profile/', profile, name='profile'),
