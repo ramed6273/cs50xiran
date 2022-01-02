@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_jalali',
     'django_zarinpal',
-#     'ckeditor',
+    'ckeditor',
     'home.apps.HomeConfig',
     'account.apps.AccountConfig',
     'django.contrib.humanize'
