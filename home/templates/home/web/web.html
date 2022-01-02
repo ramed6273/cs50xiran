@@ -152,21 +152,12 @@
 
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
-                <li>
-                    <a href="static/profile/pages/forms/general.html">
-                        <i class="fa fa-edit"></i> <span>ویرایش پروفایل</span>
-                    </a>
-                </li>
 
-
-
-
-
-                <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>سوالات متداول</span></a></li>
-
-
-                <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>راهنمای دوره</span></a></li>
-                <li><a href="{% url 'logout' %}"><i class="fa fa-circle-o text-aqua"></i> <span>خروج</span></a></li>
+                <li><a href="dashbord"><i class="fa fa-dashboard bg-white"></i> <span><b>داشبورد</b></span></a></li>
+                <li><a href="profile_edite"><i class="fa fa-edit bg-white"></i> <span><b>ویرایش پروفایل</b></span></a></li>
+                <li><a href="#"><i class="fa fa-file-text-o bg-white"></i> <span style="color: green;"><b>راهنمای دوره</b></span></a></li>
+                <li><a href="AI_class/ai_guide"><i class="fa fa-certificate bg-white"></i> <span style="color: green;"><b>راهنمای دریافت سرتیفیکیت</b></span></a></li>
+               <li><a href="{% url 'logout' %}"><i class="fa fa-lock bg-white"></i> <span><b>خروج</b></span></a></li>
             </ul>
         </section>
         <!-- /.sidebar -->
