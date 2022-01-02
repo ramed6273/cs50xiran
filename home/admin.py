@@ -1,6 +1,39 @@
 from django.contrib import admin
 from .models import *
 
+class Android_Admin(admin.ModelAdmin):
+    list_display = (
+        'titer', 'time', 'session_status', 'probelm_solve', 'slide_download', 'file_download', 'note_download')
+
+    list_filter = ('titer', 'time', 'session_status')
+    search_fields = ('titer', 'time', 'session_status')
+
+
+admin.site.register(Android_sessions, Android_Admin)
+
+
+class Ai_Admin(admin.ModelAdmin):
+    list_display = (
+    'titer', 'time', 'session_status', 'probelm_solve', 'slide_download', 'file_download', 'note_download')
+
+    list_filter = ('titer', 'time', 'session_status')
+    search_fields = ('titer', 'time', 'session_status')
+
+
+admin.site.register(Ai_sessions, Ai_Admin)
+
+
+class Web_Admin(admin.ModelAdmin):
+    list_display = (
+    'titer', 'time', 'session_status', 'probelm_solve', 'slide_download', 'file_download', 'note_download')
+
+    list_filter = ('titer', 'time', 'session_status')
+    search_fields = ('titer', 'time', 'session_status')
+
+
+admin.site.register(Web_sessions, Web_Admin)
+
+
 class CustomerAdmin(admin.ModelAdmin):
     list_display = ['firstname', 'lastname', 'number', 'email']
     search_fields = ['firstname', 'lastname', 'number', 'email']

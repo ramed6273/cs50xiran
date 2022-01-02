@@ -2,7 +2,87 @@ from django.conf import settings
 from django.db import models
 from django_zarinpal.models import Transaction
 from hashid_field import HashidAutoField
+from ckeditor.fields import RichTextField
 from random import randint
+
+
+class Android_sessions(models.Model):
+    class Meta:
+        verbose_name = "جلسات اندروید"
+        verbose_name_plural = "جلسات اندروید"
+
+    titer = models.CharField("تیتر جلسه", max_length=100)
+    description = models.CharField("متن کوتاه جلسه", max_length=1000)
+    session_status = models.BooleanField("انتشار جلسه", default=False)
+    time = models.IntegerField("زمان هر جلسه بر حسب دقیقه")
+    text = RichTextField("متن توضیحات جلسه")
+    question = RichTextField("متن سوال و جواب", blank=True, null=True)
+    probelm_solve = models.CharField('لینک کلاس رفع اشکال', max_length=500, null=True, blank=True)
+    slide_download = models.CharField('لینک دانلود اسلاید', max_length=500, null=True, blank=True)
+    file_download = models.CharField('لینک دانلود فایل', max_length=500, null=True, blank=True)
+    note_download = models.CharField('لینک دانلود جزوه', max_length=500, null=True, blank=True)
+    session_image = models.CharField('تصویر جلسه', max_length=500, null=True, blank=True)
+    first_poster = models.CharField('پوستر اولین قسمت', max_length=500, null=True, blank=True)
+    first_video_link = models.CharField('لینک اولین ویدعو', max_length=300, null=True, blank=True)
+    second_poster = models.CharField('پوستر دومین قسمت', max_length=500, null=True, blank=True)
+    second_video_link = models.CharField('لینک دومین ویدعو', max_length=300, null=True, blank=True)
+
+
+    def __str__(self):
+        return self.titer
+
+
+class Web_sessions(models.Model):
+    class Meta:
+        verbose_name = "جلسات وب"
+        verbose_name_plural = "جلسات وب"
+
+    titer = models.CharField("تیتر جلسه", max_length=100)
+    description = models.CharField("متن کوتاه جلسه", max_length=1000)
+    session_status = models.BooleanField("انتشار جلسه", default=False)
+    time = models.IntegerField("زمان هر جلسه بر حسب دقیقه")
+    text = RichTextField("متن توضیحات جلسه")
+    question = RichTextField("متن سوال و جواب", blank=True, null=True)
+    probelm_solve = models.CharField('لینک کلاس رفع اشکال', max_length=500, null=True, blank=True)
+    slide_download = models.CharField('لینک دانلود اسلاید', max_length=500, null=True, blank=True)
+    file_download = models.CharField('لینک دانلود فایل', max_length=500, null=True, blank=True)
+    note_download = models.CharField('لینک دانلود جزوه', max_length=500, null=True, blank=True)
+    session_image = models.CharField('تصویر جلسه', max_length=500, null=True)
+    first_poster = models.CharField('پوستر اولین قسمت', max_length=500, null=True, blank=True)
+    first_video_link = models.CharField('لینک اولین ویدعو', max_length=300, null=True, blank=True)
+    second_poster = models.CharField('پوستر دومین قسمت', max_length=500, null=True, blank=True)
+    second_video_link = models.CharField('لینک دومین ویدعو', max_length=300, null=True, blank=True)
+
+    def __str__(self):
+        return self.titer
+
+
+class Ai_sessions(models.Model):
+    class Meta:
+        verbose_name = "جلسات هوش مصنوعی"
+        verbose_name_plural = "جلسات هوش مصنوعی"
+
+    titer = models.CharField("تیتر جلسه", max_length=100)
+    description = models.CharField("متن کوتاه جلسه", max_length=1000)
+    session_status = models.BooleanField("انتشار جلسه", default=False)
+    time = models.IntegerField("زمان هر جلسه بر حسب دقیقه")
+    text = RichTextField("متن توضیحات جلسه")
+    question = RichTextField("متن سوال و جواب", blank=True, null=True)
+    probelm_solve = models.CharField('لینک کلاس رفع اشکال', max_length=500, null=True, blank=True)
+    slide_download = models.CharField('لینک دانلود اسلاید', max_length=500, null=True, blank=True)
+    file_download = models.CharField('لینک دانلود فایل', max_length=500, null=True, blank=True)
+    note_download = models.CharField('لینک دانلود جزوه', max_length=500, null=True, blank=True)
+    session_image = models.CharField('تصویر جلسه', max_length=500, null=True)
+    first_poster = models.CharField('پوستر اولین قسمت', max_length=500, null=True, blank=True)
+    first_video_link = models.CharField('لینک اولین ویدعو', max_length=300, null=True, blank=True)
+    second_poster = models.CharField('پوستر دومین قسمت', max_length=500, null=True, blank=True)
+    second_video_link = models.CharField('لینک دومین ویدعو', max_length=300, null=True, blank=True)
+
+    def __str__(self):
+        return self.titer
+
+
+
 
 class Customer(models.Model):
     firstname = models.CharField(max_length=256, blank=False)
