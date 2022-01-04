@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
@@ -38,24 +37,17 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="">صفحه اصلی</a>
+                            <a class="nav-link" aria-current="page" href="/winter">صفحه اصلی</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#dore1">ویژگی دوره</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#qus">سوالات متداول</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/winter/#gallery">گالری</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">درباره ما</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">تیم ما</a>
-                        </li>
+
+
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="">درباره ما</a>#}
+{#                        </li>#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="">تیم ما</a>#}
+{#                        </li>#}
                     </ul>
                 </div>
             </div>
@@ -89,9 +81,9 @@
                                 <div class="text-center">
 
                                     <button type="submit" class="right btn btn-danger">ورود به پنل کاربری</button>
-                                    <a href="#">
-                                        رمز عبور خود را فراموش کردم
-                                    </a>
+{#                                    <a href="#">#}
+{#                                        رمز عبور خود را فراموش کردم#}
+{#                                    </a>#}
 
                                 </div>
 
@@ -105,66 +97,77 @@
     </section>
     <br/><br/><br/>
 </main>
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 order-lg-1 order-2">
-                <ul class="menu">
-                    <li><a href="">ورود</a></li>
-                    <li><a href="">تیم ما</a></li>
-                    <li><a href="">درباره ما</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-4 text-center order-lg-2 order-1">
-                <img src="static/https://amirhosseindehghan.ir/images/" alt=""/>
-                <div class="line"></div>
-                <div class="text-center">
-                    <h4>حامیان</h4>
-                </div>
-                <div class="flex mt-4">
-                    <div class="sponsor"><img src="static/https://amirhosseindehghan.ir/images/" alt=""/></div>
-                    <div class="sponsor"><a href="https://karo.events" target="_blank"><img
-                            src="static/https://amirhosseindehghan.ir/images/" alt=""/></a></div>
-                    <div class="sponsor"><img src="static/https://amirhosseindehghan.ir/images/Rectangle11815.png" alt=""/></div>
-                </div>
-            </div>
-            <div class="col-lg-4 order-lg-3 order-3">
-                <div class="box">
-                    <h4>تماس با پشتیبانی</h4>
-                    <div class="flex justify-content-start mt-3">
-                        <div><img src="static/https://amirhosseindehghan.ir/images/email.svg" alt=""/></div>
-                        <div class="me-2" style="color: white"><a style="color: white" href="mail:">info@info.com</a>
+ <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 order-lg-2 order-2 box">
+
+                        <div class="text-center">
+                            <h4>دیگر سرویس‌ها</h4>
+                            <p style="color: ghostwhite">چند تا از کارایی که تیم ما انجام میده</p>
+                        </div>
+                        <div class="flex mt-5">
+                            <div class="sponsor"><a href="https://karo.events" target="_blank"><img src="https://cs50x.ir/winter/static/main/images/karoevent.png" width="80" height="70" alt="" /></a></div>
+                            <div class="sponsor"><a href="https://Karo.studio" target="_blank"><img src="https://cs50x.ir/winter/static/main/images/karostudio.png" width="80" height="70" alt="" /></a></div>
+                            <div class="sponsor"><a href="https://karo.tech" target="_blank"><img src="https://cs50x.ir/winter/static/main/images/karotech.png" width="80" height="70" alt="" /></a></div>
+                            <div class="sponsor"><a href="https://karo.school" target="_blank"><img src="https://cs50x.ir/winter/static/main/images/karoschool.png" width="80" height="70" alt="" /></a></div>
+                        </div>
+{#                        <ul class="menu">#}
+{#                            <li><a href="">ورود</a></li>#}
+{#                            <li><a href="https://cs50x.ir/team">تیم ما</a></li>#}
+{#                            <li><a href="https://cs50x.ir/aboutus">درباره ما</a></li>#}
+{#                        </ul>#}
+
+                        </div>
+                    <div class="col-lg-4 text-center order-lg-2 order-1 box">
+                        <img src="https://cs50x.ir/winter/static/main/images/logo2.svg" width="290" alt="" />
+{#                        <div class="line"></div>#}
+{#                        <div class="text-center">#}
+{#                            <h4>دیگر سرویس‌ها</h4>#}
+{#                            <p style="color: ghostwhite">چند تا از کارایی که تیم ما انجام میده</p>#}
+{#                        </div>#}
+{#                        <div class="flex mt-5">#}
+{#                            <div class="sponsor"><a href="https://karo.events" target="_blank"><img src="static/main/images/karoevent.png" width="80" height="70" alt="" /></a></div>#}
+{#                            <div class="sponsor"><a href="https://Karo.studio" target="_blank"><img src="static/main/images/karostudio.png" width="80" height="70" alt="" /></a></div>#}
+{#                            <div class="sponsor"><a href="https://karo.tech" target="_blank"><img src="static/main/images/karotech.png" width="80" height="70" alt="" /></a></div>#}
+{#                            <div class="sponsor"><a href="https://karo.school" target="_blank"><img src="static/main/images/karoschool.png" width="80" height="70" alt="" /></a></div>#}
+{#                        </div>#}
+                    </div>
+                    <div class="col-lg-4 order-lg-3 order-3">
+                        <div class="box">
+                            <h4>تماس با پشتیبانی</h4>
+                            <div class="flex justify-content-start mt-3">
+                                <div><img src="https://cs50x.ir/winter/static/main/images/email.svg" alt="" /></div>
+                                <div class="me-2" style="color: white"><a style="color: white" href="mail:support@cs50x.ir">support@cs50x.ir</a></div>
+                            </div>
+                            <div class="flex justify-content-start mt-3">
+                                <div><img src="https://cs50x.ir/winter/static/main/images/phone.svg" alt="" /></div>
+                                <div class="me-2" style="color: white;"><a style="color: white;" href="tel:02128429035">۰۲۱۲۸۴۲۹۰۳۵</a></div>
+                            </div>
+                            <div class="line"></div>
+                            <ul class="social">
+                                <li>
+                                    <a href="https://twitter.com/CS50xIran" target="_blank"><img src="https://cs50x.ir/winter/static/main/images/social/twitter.svg" alt="" /></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UC2oVtR9BHNjK1wE18l_blfw" target="_blank"><img src="https://cs50x.ir/winter/static/main/images/social/youtube.svg" alt="" /></a>
+                                </li>
+                                <li>
+                                    <a href="https://instagram.com/cs50xiran" target="_blank"><img src="https://cs50x.ir/winter/static/main/images/social/instagram.svg" alt="" /></a>
+                                </li>
+                                <li>
+                                    <a href="https://linkedin.com/in/cs50xiran" target="_blank"><img src="https://cs50x.ir/winter/static/main/images/social/linkedin.svg" alt="" /></a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="flex justify-content-start mt-3">
-                        <div><img src="static/https://amirhosseindehghan.ir/images/phone.svg" alt=""/></div>
-                        <div class="me-2" style="color: white;"><a style="color: white;" href="tel:02144444444">02144444444</a>
-                        </div>
-                    </div>
-                    <div class="line"></div>
-                    <ul class="social">
-                        <li>
-                            <a href=""><img src="https://amirhosseindehghan.ir/images/social/twitter.svg" alt=""/></a>
-                        </li>
-                        <li>
-                            <a><img src="https://amirhosseindehghan.ir/images/social/youtube.svg" alt=""/></a>
-                        </li>
-                        <li>
-                            <a href=""><img src="https://amirhosseindehghan.ir/images/social/instagram.svg" alt=""/></a>
-                        </li>
-                        <li>
-                            <a href=""><img src="https://amirhosseindehghan.ir/images/social/linkedin.svg" alt=""/></a>
-                        </li>
-                    </ul>
+                </div>
+                <hr />
+                <div class="copy-right">
+                    <p>تمامی حقوق در سی اس فیفتی ایران محفوظ می باشد</p>
                 </div>
             </div>
-        </div>
-        <hr/>
-        <div class="copy-right">
-            <p>تمامی حقوق</p>
-        </div>
-    </div>
-</footer>
+        </footer>
 
 <!-- Scripts -->
 <script src="https://amirhosseindehghan.ir/js/splide.js"></script>
