@@ -106,7 +106,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                             {% endif %}
                                         {% if i.session_status %}
 
-                                            <a href="{% url "android_class_sessions" session_id=i.id %}" type="button" class="btn btn-red">ورود به جلسه اصلی</a>
+                                            <a href="{% url "android_class_sessions" session_id=i.id %}" type="button" class="btn btn-red">ورود به جلسه اصلی</a><br class="d-lg-none d-block" />
                                             <a href="{{ i.probelm_solve }}" type="button" class="btn btn-red">ورود به جلسه رفع اشکال</a>
                                         {% else %}
 
