@@ -570,7 +570,7 @@ def send_sms(order):
             "from": settings.SIGNAL_NUMBER,
             "message": customer.firstname + " عزیز" + '\n\n'
                     f'ثبت نام شما در  دوره‌ی {order.product.get_type_display()} انجام شد. کد پیگیری شما {order.transaction.order_number} است.' + '\n\n'
-                    "اطلاعات ورود به پنل کاربری را یک هفته قبل از شروع دوره برای شما ارسال خواهیم کرد." + '\n\n'
+                    "اطلاعات ورود به پنل کاربری به زودی برای شما ارسال خواهد شد." + '\n\n'
                     "سی‌اس‌فیفتی ایران" + '\n\n'
                     "cs50x.ir" + '\n\n',
             "numbers": [customer.number]
