@@ -2,13 +2,18 @@ from django.shortcuts import render, redirect, HttpResponse, get_object_or_404, 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ValidationError
+from django.utils.http import urlsafe_base64_encode
+from django.utils.encoding import force_bytes
+from django.contrib.auth.tokens import default_token_generator
+from django.template.loader import render_to_string
+from django.core.mail import send_mail, BadHeaderError
 from django_zarinpal.services import start_transaction, verify_transaction
 from django.core.mail import send_mail
 from django_zarinpal.exceptions import ZarinpalException
 from django.core.validators import RegexValidator
 from django.contrib.auth.models import User
 from .forms import UpdateAccount
-from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.forms import PasswordChangeForm, PasswordResetForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth import get_user_model
 from django.conf import settings
