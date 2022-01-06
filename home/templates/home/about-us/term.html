@@ -37,7 +37,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </style>
     </head>
 <body>
-{% include "../header.html" %}
+<header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/winter"><img src="static/main/images/CS50xIranfinal1.png" alt="" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<svg fill="#fff" width="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px"><path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z"/></svg>
+                {#                <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">#}
+{#                    <path d="M2 4C3.1 4 4 3.1 4 2C4 0.9 3.1 0 2 0C0.9 0 0 0.9 0 2C0 3.1 0.9 4 2 4ZM2 6C0.9 6 0 6.9 0 8C0 9.1 0.9 10 2 10C3.1 10 4 9.1 4 8C4 6.9 3.1 6 2 6ZM2 12C0.9 12 0 12.9 0 14C0 15.1 0.9 16 2 16C3.1 16 4 15.1 4 14C4 12.9 3.1 12 2 12Z" fill="white"></path>#}
+{#                </svg>#}
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/winter">صفحه اصلی</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
 
 <main>
 
@@ -91,70 +111,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
         </main>
+{% include "../sponsers.html" %}
+<br />
 
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-  <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 order-lg-1 order-2">
-                        <ul class="menu">
-{#                            <li><a href="">ورود</a></li>#}
-                            <li><a href="https://cs50x.ir/team">تیم ما</a></li>
-                            <li><a href="https://cs50x.ir/aboutus">درباره ما</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-4 text-center order-lg-2 order-1">
-                        <img src="static/main/images/logo2.svg" alt="" />
-                        <div class="line"></div>
-                        <div class="text-center">
-                            <h4>حامیان</h4>
-                        </div>
-                        <div class="flex mt-4">
-                            <div class="sponsor"><img src="static/main/images/karoo.svg" alt="" /></div>
-                            <div class="sponsor"><a href="https://karo.events" target="_blank"><img src="static/main/images/karo.svg" alt="" /></a></div>
-                            <div class="sponsor"><img src="static/main/images/Rectangle11815.png" alt="" /></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 order-lg-3 order-3">
-                        <div class="box">
-                            <h4>تماس با پشتیبانی</h4>
-                            <div class="flex justify-content-start mt-3">
-                                <div><img src="static/main/images/email.svg" alt="" /></div>
-                                <div class="me-2" style="color: white"><a style="color: white" href="mail:support@cs50x.ir">support@cs50x.ir</a></div>
-                            </div>
-                            <div class="flex justify-content-start mt-3">
-                                <div><img src="static/main/images/phone.svg" alt="" /></div>
-                                <div class="me-2" style="color: white;"><a style="color: white;" href="tel:02128429035">02128429035</a></div>
-                            </div>
-                            <div class="line"></div>
-                            <ul class="social">
-                                <li>
-                                    <a href="https://twitter.com/CS50xIran"><img src="static/main/images/social/twitter.svg" alt="" /></a>
-                                </li>
-                                <li>
-                                    <a><img src="static/main/images/social/youtube.svg" alt="" /></a>
-                                </li>
-                                <li>
-                                    <a href="https://instagram.com/cs50xiran"><img src="static/main/images/social/instagram.svg" alt="" /></a>
-                                </li>
-                                <li>
-                                    <a href="https://linkedin.com/in/cs50xiran"><img src="static/main/images/social/linkedin.svg" alt="" /></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <hr />
-                <div class="copy-right">
-                    <p>تمامی حقوق در سی اس فیفتی ایران محفوظ می باشد</p>
-                </div>
-            </div>
-        </footer>
+
+  {% include "../footer.html" %}
 
         <!-- Scripts -->
         <script src="static/main/js/splide.js"></script>
