@@ -41,12 +41,12 @@ urlpatterns = [
          name="android_class_sessions_drescription"),
     path("android_sessions/<int:session_id>/question", android_class_sessions_question,
          name="android_class_sessions_question"),
-    # password urls# urlpatterns += staticfiles_urlpatterns()
+    # password urls
     path('change_password', change_password, name="change_password"),
     # path('password_reset', views.PasswordResetView.as_view(), name='password_reset'),
     # path('reset/done', views.PasswordResetDoneView.as_view(), name='password_reset_done'),
     # path('reset/<uidb64>/<token>', views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
-    # path('password_reset_complete', views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
+    # path('password_reset_complete', views.PasswordResetCompleteView.as_view(), name='password_reset_complete')
     path("password_reset", views.password_reset_request, name="password_reset"),
     path('password_reset/done/',
          auth_views.PasswordResetDoneView.as_view(template_name='password/password_reset_done.html'),
@@ -58,3 +58,4 @@ urlpatterns = [
          auth_views.PasswordResetCompleteView.as_view(template_name='password/password_reset_complete.html'),
          name='password_reset_complete'),
 ]
+# urlpatterns += staticfiles_urlpatterns()
