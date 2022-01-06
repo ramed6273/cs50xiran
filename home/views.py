@@ -608,7 +608,7 @@ def password_reset_request(request):
                         send_mail(subject, email, 'hello@cs50x.ir', [user.email], fail_silently=False)
                     except BadHeaderError:
                         return HttpResponse('Invalid header found.')
-                    return redirect("/password_reset/done/")
+                    return redirect("password_reset/done/")
     password_reset_form = PasswordResetForm()
     return render(request=request, template_name="password/password_reset.html", context={
         "password_reset_form": password_reset_form
