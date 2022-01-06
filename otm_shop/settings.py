@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django_jalali',
     'django_zarinpal',
     'ckeditor',
-    'widget_tweaks',
+#     'widget_tweaks',
     'home.apps.HomeConfig',
     'account.apps.AccountConfig',
     'django.contrib.humanize',
