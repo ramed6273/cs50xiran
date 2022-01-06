@@ -48,7 +48,8 @@ INSTALLED_APPS = [
 #     'widget_tweaks',
     'home.apps.HomeConfig',
     'account.apps.AccountConfig',
-    'django.contrib.humanize'
+    'django.contrib.humanize',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
