@@ -31,6 +31,8 @@ urlpatterns = [
          name="ai_class_sessions_drescription"),
     path("ai_sessions/<int:session_id>/question", ai_class_sessions_question,
          name="ai_class_sessions_question"),
+    path("ai_sessions/<int:session_id>/quiz", ai_class_sessions_quiz,
+         name="ai_class_sessions_quiz"),
 
     path("web_sessions/<int:session_id>/description", web_class_sessions_description,
          name="web_class_sessions_drescription"),
