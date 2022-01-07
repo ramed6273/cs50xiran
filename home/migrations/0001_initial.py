@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 ('time', models.IntegerField(verbose_name='زمان هر جلسه بر حسب دقیقه')),
                 ('text', ckeditor.fields.RichTextField(verbose_name='متن توضیحات جلسه')),
                 ('question', ckeditor.fields.RichTextField(blank=True, null=True, verbose_name='متن سوال و جواب')),
-                ('quiz' , ckeditor.fields.RichTextField(blank=True, null=True, verbose_name='متن کوئیز')),
+                ('quiz', ckeditor.fields.RichTextField(blank=True, null=True, verbose_name='متن کوئیز')),
                 ('probelm_solve', models.CharField(blank=True, max_length=500, null=True, verbose_name='لینک کلاس رفع اشکال')),
                 ('slide_download', models.CharField(blank=True, max_length=500, null=True, verbose_name='لینک دانلود اسلاید')),
                 ('file_download', models.CharField(blank=True, max_length=500, null=True, verbose_name='لینک دانلود فایل')),
