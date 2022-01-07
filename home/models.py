@@ -17,6 +17,7 @@ class Android_sessions(models.Model):
     time = models.IntegerField("زمان هر جلسه بر حسب دقیقه")
     text = RichTextField("متن توضیحات جلسه")
     question = RichTextField("متن سوال و جواب", blank=True, null=True)
+    quiz = RichTextField("متن کوئیز", blank=True, null=True)
     probelm_solve = models.CharField('لینک کلاس رفع اشکال', max_length=500, null=True, blank=True)
     slide_download = models.CharField('لینک دانلود اسلاید', max_length=500, null=True, blank=True)
     file_download = models.CharField('لینک دانلود فایل', max_length=500, null=True, blank=True)
