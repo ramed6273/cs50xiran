@@ -140,7 +140,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return HttpResponseRedirect(reverse("dashbord"))
+    return HttpResponseRedirect(reverse("/winter/accounts/login"))
 
 
 @login_required
@@ -180,6 +180,22 @@ def ai_class_sessions_question(request, session_id):
                 return HttpResponseRedirect(reverse('ai_class'))
     else:
         return HttpResponseRedirect(reverse('ai_class'))
+
+@login_required
+def ai_class_sessions_quiz(request, session_id):
+    session = get_object_or_404(Ai_sessions, pk=session_id)
+    t = session.session_status
+    context = {
+        'session': session
+    }
+    if request.user.complete_profile:
+        if request.user.ai:
+            if t:
+                return render(request, "home/ai/ai_class_sessions_quiz.html", context)
+            else:
+                return HttpResponseRedirect(reverse('ai_class'))
+    else:
+        return HttpResponseRedirect(reverse('ai_class'))    
 
 
 @login_required
