@@ -59,7 +59,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/winter/dashbord">داشبورد</a>
                     </li>
-                    
+
 
                     <li class="nav-item">
                         <a class="nav-link" href="/winter/logout">خروج</a>
@@ -101,7 +101,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div><br /> <br /><br />
                 <div class="bottom text-end">
                     <div class="bottom-center">
-                        <form action="" method="post">
+                        <form action="" method="post" novalidate>
                             {% csrf_token %}
                                 <div class="row">
                             <div class="mb-3 form-check col-lg-6">
@@ -126,27 +126,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                             </div><br /><br /><br /><br /><br />
                             <div class="mb-3 col-lg-6">
-                                <label for="exampleFormControlInput1" class="form-label">شهر</label>
+                                <label for="exampleFormControlInput1" class="form-label"><span style="color: red;">*</span>
+                                    شهر</label>
                            {% render_field form.city class="form-control" %}
 
                             </div>
                             <div class="mb-3 col-lg-6">
-                                <label for="exampleFormControlInput1" class="form-label">کد پستی</label>
+                                <label for="exampleFormControlInput1" class="form-label"><span style="color: red;">*</span>
+                                    کدپستی 10 رقمی
+
+                                </label>
                            {% render_field form.postal_code class="form-control" %}
 
                             </div><br /><br /><br /><br /><br />
                              <div class="mb-3 col-lg-6">
-                                <label for="exampleFormControlInput1" class="form-label">سن</label>
+                                <label for="exampleFormControlInput1" class="form-label"><span style="color: red;">*</span>
+                                    سن</label>
                            {% render_field form.age class="form-control" %}
 
                             </div>
                              <div class="mb-3 col-lg-6">
-                                <label for="exampleFormControlInput1" class="form-label">رشته تحصیلی</label>
+                                <label for="exampleFormControlInput1" class="form-label"><span style="color: red;">*</span>
+                                    رشته تحصیلی</label>
                            {% render_field form.field class="form-control" %}
 
                             </div><br /><br /><br /><br /><br />
                             <div class="mb-3 col-lg-6">
-                                <label for="exampleFormControlInput1" class="form-label">آدرس لینکدین</label>
+                                <label for="exampleFormControlInput1" class="form-label"><span style="color: red;">*</span>
+                                    آدرس لینکدین
+                                </label>
                            {% render_field form.linked_in class="form-control" %}
 
                             </div>
@@ -156,12 +164,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                             </div><br /><br /><br /><br /><br />
                             <div class="mb-3 col-lg-6">
-                                <label for="exampleFormControlInput1" class="form-label">تلفن ثابت</label>
+                                <label for="exampleFormControlInput1" class="form-label"><span style="color: red;">*</span>
+                                    تلفن ثابت</label>
                            {% render_field form.static_phone class="form-control" %}
 
                             </div>
                                     <div class="mb-3 col-lg-6">
-                                <label for="exampleFormControlInput1" class="form-label">آدرس</label>
+                                <label for="exampleFormControlInput1" class="form-label"><span style="color: red;">*</span>
+                                    آدرس</label>
                                        {% render_field form.address class="form-control" %}
                             </div>
                                 </div>
