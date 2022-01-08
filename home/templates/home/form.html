@@ -88,6 +88,28 @@
 
                             <input name="product" type="hidden" value="{{ product.type }}" />
                         </form>
+                        <div class="bottom-center">
+                            {% if product.type == 'ai' %}
+                                <a href="ai-ins">
+                                    <button class="right" id="group-btn">ثبت نام اقساطی</button>
+                                </a><br /><br /><br />
+                                {% endif %}
+                            {% if product.type == 'web' %}
+                                <a href="web-ins">
+                                    <button class="right" id="group-btn">ثبت نام اقساطی</button>
+                                </a><br /><br /><br />
+                                {% endif %}
+                            {% if product.type == 'android' %}
+                                <a href="android-ins">
+                                    <button class="right" id="group-btn">ثبت نام اقساطی</button>
+                                </a><br /><br /><br />
+                                {% endif %}
+                            {% if product.type == 'pack' %}
+                                <a href="pack-ins">
+                                    <button class="right" id="group-btn">ثبت نام اقساطی</button>
+                                </a><br /><br /><br />
+                                {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
