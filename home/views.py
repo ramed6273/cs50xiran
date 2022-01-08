@@ -24,7 +24,6 @@ from account.models import User
 import requests
 import json
 
-
 # Pages
 @login_required
 def web_class(request):
@@ -77,7 +76,7 @@ def android_class_sessions(request, session_id):
             if request.user.android:
                 return render(request, 'home/android/details.html', context)
     else:
-        return HttpResponseRedirect(reverse("ai_class"))
+        return HttpResponseRedirect(reverse("dashbord"))
 
 
 @login_required
@@ -140,7 +139,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return HttpResponseRedirect(reverse("dashbord")
+    return HttpResponseRedirect(reverse("dashbord"))
 
 
 @login_required
@@ -195,7 +194,7 @@ def ai_class_sessions_quiz(request, session_id):
             else:
                 return HttpResponseRedirect(reverse('ai_class'))
     else:
-        return HttpResponseRedirect(reverse('ai_class'))    
+        return HttpResponseRedirect(reverse('ai_class'))
 
 
 @login_required
@@ -307,7 +306,6 @@ def web(request):
         'discount': Discount.objects.get(product=product),
         'setting_web': setting_web
     })
-                                
 
 
 def ai(request):
@@ -341,6 +339,8 @@ def pack(request):
         'discount': Discount.objects.get(product=product),
         'setting_pack': setting_pack
     })
+
+
 
 
 
