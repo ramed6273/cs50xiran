@@ -6,10 +6,6 @@ from .views import *
 urlpatterns = [
     path('', index),
 #     path('about-us', about_us),
-    path('ai-ins', aiins),
-    path('android-ins', androidins),
-    path('pack-ins', packins),
-    path('web-ins', webins),
     path('ai', ai),
     path('android', android),
     path('pack', pack),
