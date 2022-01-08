@@ -91,7 +91,7 @@ def ai_class_sessions(request, session_id):
             if request.user.ai:
                 return render(request, 'home/ai/details.html', context)
     else:
-        return HttpResponseRedirect(reverse("ai_class"))
+        return HttpResponseRedirect(reverse("dashbord"))
 
 
 @login_required
@@ -106,7 +106,7 @@ def web_class_sessions(request, session_id):
             if request.user.web:
                 return render(request, 'home/web/details.html', context)
     else:
-        return HttpResponseRedirect(reverse("web_class"))
+        return HttpResponseRedirect(reverse("dashbord"))
 
 
 # # Main
@@ -306,12 +306,29 @@ def web(request):
         'discount': Discount.objects.get(product=product),
         'setting_web': setting_web
     })
+def webins(request):
+    setting_web = Setting_Web.objects.first()
+    product = Product.objects.get(type='web-ins')
+    return render(request, 'home/webins/index.html', {
+        'product': product,
+        'discount': Discount.objects.get(product=product),
+        'setting_web': setting_web
+    })
 
 
 def ai(request):
     setting_ai = Setting_AI.objects.first()
     product = Product.objects.get(type='ai')
     return render(request, 'home/ai/index.html', {
+        'product': product,
+        'discount': Discount.objects.get(product=product),
+        'setting_ai': setting_ai
+
+    })
+def aiins(request):
+    setting_ai = Setting_AI.objects.first()
+    product = Product.objects.get(type='ai-ins')
+    return render(request, 'home/aiins/index.html', {
         'product': product,
         'discount': Discount.objects.get(product=product),
         'setting_ai': setting_ai
@@ -328,6 +345,14 @@ def android(request):
         'discount': Discount.objects.get(product=product),
         'setting_android': setting_android
     })
+def androidins(request):
+    setting_android = Setting_Android.objects.first()
+    product = Product.objects.get(type='android-ins')
+    return render(request, 'home/androidins/index.html', {
+        'product': product,
+        'discount': Discount.objects.get(product=product),
+        'setting_android': setting_android
+    })
 
 
 
@@ -335,6 +360,14 @@ def pack(request):
     setting_pack = Setting_Pack.objects.first()
     product = Product.objects.get(type='pack')
     return render(request, 'home/pack/index.html', {
+        'product': product,
+        'discount': Discount.objects.get(product=product),
+        'setting_pack': setting_pack
+    })
+def packins(request):
+    setting_pack = Setting_Pack.objects.first()
+    product = Product.objects.get(type='pack-ins')
+    return render(request, 'home/packins/index.html', {
         'product': product,
         'discount': Discount.objects.get(product=product),
         'setting_pack': setting_pack
