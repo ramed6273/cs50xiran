@@ -45,7 +45,7 @@ class User(AbstractBaseUser):
     rezume = models.CharField('لینک رزومه', max_length=300, null=True, blank=True)
     postal_code = models.PositiveIntegerField('کد پستی', null=True)
     linked_in = models.CharField('لینکدین', max_length=100, null=True)
-    static_phone = models.PositiveIntegerField('تلفن ثابت', null=True)
+    static_phone = models.IntegerField('تلفن ثابت', null=True)
     USERNAME_FIELD = 'email'
     complete_profile = models.BooleanField('تکمیل پروفایل', default=False)
     REQUIRED_FIELDS = ['name', 'last_name', 'phone']
