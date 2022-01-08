@@ -100,7 +100,11 @@ class Product(models.Model):
         ('android', 'Android'),
         ('ai', 'Artificial Intelligence'),
         ('web', 'Web'),
-        ('pack', 'Pack')
+        ('pack', 'Pack'),
+        ('android-ins', 'Android Ins'),
+        ('ai-ins', 'Artificial Intelligence Ins'),
+        ('web-ins', 'Web Ins'),
+        ('pack-ins', 'Pack Ins')
     )
     name = models.CharField(max_length=256, blank=False)
     price = models.IntegerField(null=False, blank=False)
