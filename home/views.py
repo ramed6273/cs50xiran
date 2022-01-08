@@ -308,14 +308,7 @@ def web(request):
         'setting_web': setting_web
     })
                                 
-def webins(request):
-    setting_web = Setting_Web.objects.first()
-    product = Product.objects.get(type='web-ins')
-    return render(request, 'home/webins/index.html', {
-        'product': product,
-        'discount': Discount.objects.get(product=product),
-        'setting_web': setting_web
-    })
+
 
 def ai(request):
     setting_ai = Setting_AI.objects.first()
@@ -327,15 +320,7 @@ def ai(request):
 
     })
 
-def aiins(request):
-    setting_ai = Setting_AI.objects.first()
-    product = Product.objects.get(type='ai-ins')
-    return render(request, 'home/aiins/index.html', {
-        'product': product,
-        'discount': Discount.objects.get(product=product),
-        'setting_ai': setting_ai
 
-    })
 
 def android(request):
     setting_android = Setting_Android.objects.first()
@@ -346,14 +331,7 @@ def android(request):
         'setting_android': setting_android
     })
 
-def androidins(request):
-    setting_android = Setting_Android.objects.first()
-    product = Product.objects.get(type='android-ins')
-    return render(request, 'home/androidins/index.html', {
-        'product': product,
-        'discount': Discount.objects.get(product=product),
-        'setting_android': setting_android
-    })
+
 
 def pack(request):
     setting_pack = Setting_Pack.objects.first()
@@ -364,14 +342,7 @@ def pack(request):
         'setting_pack': setting_pack
     })
 
-def packins(request):
-    setting_pack = Setting_Pack.objects.first()
-    product = Product.objects.get(type='pack-ins')
-    return render(request, 'home/packins/index.html', {
-        'product': product,
-        'discount': Discount.objects.get(product=product),
-        'setting_pack': setting_pack
-    })
+
 
 def about_us(request):
     return render(request, 'home/about-us/index.html')
