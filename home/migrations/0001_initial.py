@@ -347,7 +347,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=256)),
                 ('price', models.IntegerField()),
-                ('type', models.CharField(choices=[('android', 'Android'), ('ai', 'Artificial Intelligence'), ('web', 'Web'), ('pack', 'Pack')], max_length=64)),
+                ('type', models.CharField(choices=[('android', 'Android'), ('ai', 'Artificial Intelligence'), ('web', 'Web'), ('pack', 'Pack'), ('android-ins', 'Android Ins'), ('ai-ins', 'Artificial Intelligence Ins'), ('web-ins', 'Web Ins'), ('pack-ins', 'Pack Ins')], max_length=64)),
                 ('customers', models.ManyToManyField(to='home.Customer')),
             ],
         ),
