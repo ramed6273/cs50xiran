@@ -45,6 +45,7 @@ class UserAdmin(BaseUserAdmin):
     add_form = UserCreationForm
     list_display = ('email', 'name', 'last_name', 'phone', 'android', 'ai', 'web', 'is_active', 'is_admin','complete_profile')
     list_filter = ('is_admin', 'is_active', 'ai', 'web', 'android')
+    search_fields = ('email', 'phone')
     fieldsets = (
         (None, {'fields': (
             'phone', 'name', 'last_name', 'email', 'password', 'android', 'ai', 'web', 'is_active', 'field',
