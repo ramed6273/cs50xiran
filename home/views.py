@@ -314,7 +314,9 @@ def webins(request):
         'discount': Discount.objects.get(product=product),
         'setting_web': setting_web
     })
-
+def web_training(request):
+    context = {}
+    return render(request, 'home/web/training.html', context)
 
 def ai(request):
     setting_ai = Setting_AI.objects.first()
@@ -334,7 +336,9 @@ def aiins(request):
         'setting_ai': setting_ai
 
     })
-
+def ai_training(request):
+    context = {}
+    return render(request, 'home/ai/training.html', context)
 
 
 def android(request):
@@ -353,7 +357,9 @@ def androidins(request):
         'discount': Discount.objects.get(product=product),
         'setting_android': setting_android
     })
-
+def android_training(request):
+    context = {}
+    return render(request, 'home/android/training.html', context)
 
 
 def pack(request):
