@@ -8,6 +8,7 @@ urlpatterns = [
     path('course-guide', course_guide),
     path('ai_training', ai_training),
     path('web_training', web_training),
+    path('android_training', android_training),
 #     path('about-us', about_us),
     path('ai-ins', aiins),
     path('web-ins', webins),
