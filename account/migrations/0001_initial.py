@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
                 ('web', models.BooleanField(default=False, verbose_name='کلاس وب')),
                 ('ai', models.BooleanField(default=False, verbose_name='کلاس هوش مصنوعی')),
                 ('field', models.CharField(max_length=100, null=True, verbose_name='رشته تحصیلی')),
-                ('age', models.CharField(null=True, max_length=300, verbose_name='سن')),
+                ('age', models.PositiveIntegerField(null=True, verbose_name='سن')),
                 ('address', models.TextField(null=True, verbose_name='ادرس')),
                 ('city', models.CharField(max_length=100, null=True, verbose_name='شهر')),
                 ('rezume', models.CharField(blank=True, max_length=300, null=True, verbose_name='لینک رزومه')),
