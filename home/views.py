@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect, HttpResponse, get_object_or_404, HttpResponseRedirect, reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -277,6 +278,7 @@ def profile_edite(request):
         if form.is_valid():
             request.user.complete_profile = True
             form.save()
+            messages.success(request, "پروفایل شما با موفقیت بروزرسانی شد")
             return HttpResponseRedirect(reverse('dashbord'))
     return render(request, "home/profile/profile_edite.html", {'form': form})
 
