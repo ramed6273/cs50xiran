@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
                 ('address', models.TextField(null=True, verbose_name='ادرس')),
                 ('city', models.CharField(max_length=100, null=True, verbose_name='شهر')),
                 ('rezume', models.CharField(blank=True, max_length=300, null=True, verbose_name='لینک رزومه')),
-                ('postal_code', models.PositiveIntegerField(null=True, verbose_name='کد پستی')),
+                ('postal_code', models.PositiveIntegerField(blank=True, null=True, verbose_name='کد پستی')),
                 ('linked_in', models.CharField(blank=True, max_length=100, null=True, verbose_name='لینکدین')),
                 ('static_phone', models.PositiveIntegerField(blank=True, null=True, verbose_name='تلفن ثابت')),
                 ('complete_profile', models.BooleanField(default=False, verbose_name='تکمیل پروفایل')),
