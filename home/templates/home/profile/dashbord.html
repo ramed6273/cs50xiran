@@ -143,6 +143,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </script>
 
 {% endif %}
+            {% if messages %}
+        {% for message in messages %}
+            <script>
+                Swal.fire({
+                    title: '{{ request.user.name }} ' + 'عزیز',
+                    text: '{{ message }}',
+                    width: 500,
+                    backdrop: `rgba(255, 99, 71, 0.2) no-repeat`,
+                    confirmButtonText: 'متوجه شدم',
+                    confirmButtonColor: 'green',
+                    showCancelButton: false,
+                })
+            </script>
+        {% endfor %}
+    {% endif %}
 <br /><br /><br /><br />
             <section id="fixedBtnCount">
 
