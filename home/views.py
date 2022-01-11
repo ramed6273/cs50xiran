@@ -298,6 +298,10 @@ def change_password(request):
 
 
 # Main Views
+def course_guide(request):
+    context = {}
+    return render(request, 'home/profile/guide.html', context)
+
 def web(request):
     setting_web = Setting_Web.objects.first()
     product = Product.objects.get(type='web')
