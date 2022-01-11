@@ -127,7 +127,7 @@ def login_view(request):
             return HttpResponseRedirect(reverse("dashbord"))
         else:
             context = {
-                "email": email,
+                "email": 'نام کاربری یا رمزعبور شما اشتباه است',
             }
     else:
         if request.user.is_authenticated:
