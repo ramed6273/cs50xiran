@@ -142,7 +142,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 {% endif %}
 <br /><br /><br /><br />
+                 <section id="fixedBtnCount">
 
+                <div class="packages-section">
+                    <div class="container">
+                        <div class="wrapper">
 
                         </div>
                     </div>
@@ -154,162 +158,84 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <div class="box">
                                         <img src="static/main/images/web.png" alt="" />
                                         <div class="contents">
-                                            <hr />
-                                            <h2>برنامه‌نویسی وب</h2>
-                                            <p>Python & JavaScript</p>
 
-                                            <a href="web_class" type="button" class="btn btn-red">ورود به دوره</a>
+
+                                            <a href="https://cs50x.ir/winter/static/main/CS50-Web-Programming-Guidlines.pdf" type="button" class="btn btn-red">راهنمای دوره وب</a>
                                         </div>
                                     </div>
                                 </li>
                             {% else %}
-                                <li class="splide__slide">
-                                    <div class="box">
-                                        <img src="static/main/images/web.png" alt="" />
-                                        <div class="contents">
-                                            <hr />
-                                            <h2>برنامه‌نویسی وب</h2>
-                                            <p style="color: #a51c30;">شما در این دوره ثبت‌نام نکرده‌اید</p>
 
-                                            <a href="https://cs50x.ir/winter/web" type="button" class="btn btn-red" style="background-color: green;">ثبت‌نام</a>
-                                        </div>
-                                    </div>
-                                </li>
                             {% endif %}
                             {% if request.user.ai %}
                                 <li class="splide__slide">
                                     <div class="box">
                                         <img src="static/main/images/ai.png" alt="" />
                                         <div class="contents">
-                                            <hr />
-                                            <h5>هوش مصنوعی</h5>
-                                            <p>AI With Python</p>
 
-                                            <a href="AI_class" type="button" class="btn btn-red">ورود به دوره</a>
+
+                                            <a href="https://cs50x.ir/winter/static/main/CS50x-AI-Guidlines.pdf" type="button" class="btn btn-red">راهنمای دوره هوش مصنوعی</a>
                                         </div>
                                     </div>
                                 </li>
                             {% else %}
-                                <li class="splide__slide">
-                                    <div class="box">
-                                        <img src="static/main/images/ai.png" alt="" />
-                                        <div class="contents">
-                                            <hr />
-                                            <h5>هوش مصنوعی</h5>
-                                            <p style="color: #a51c30;">شما در این دوره ثبت‌نام نکرده‌اید</p>
 
-                                            <a href="https://cs50x.ir/winter/ai" type="button" class="btn btn-red" style="background-color: green;">ثبت‌نام</a>
-                                        </div>
-                                    </div>
-                                </li>
                             {% endif %}
                             {% if request.user.android %}
                                 <li class="splide__slide">
                                     <div class="box">
                                         <img src="static/main/images/android.png" alt="" />
                                         <div class="contents">
-                                            <hr />
-                                            <h5>دوره اندروید</h5>
-                                            <p>Android with Kotlin </p>
 
-                                            <a href="android_class" type="button" class="btn btn-red">ورود به دوره</a>
+
+                                            <a href="" type="button" class="btn btn-red">راهنمای دوره اندروید</a>
                                         </div>
                                     </div>
                                 </li>
                             {% else %}
-                                <li class="splide__slide">
-                                    <div class="box">
-                                        <img src="static/main/images/android.png" alt="" />
-                                        <div class="contents">
-                                            <hr />
-                                            <h5>دوره اندروید</h5>
-                                            <p style="color: #a51c30;">شما در این دوره ثبت‌نام نکرده‌اید</p>
 
-                                            <a href="https://cs50x.ir/winter/android" type="button" class="btn btn-red" style="background-color: green;">ثبت‌نام</a>
-                                        </div>
-                                    </div>
-                                </li>
                             {% endif %}
                             {% if request.user.web %}
                                 <li class="splide__slide">
                                     <div class="box">
                                         <img src="static/main/images/web.png" alt="" />
                                         <div class="contents">
-                                            <hr />
-                                            <h2>برنامه‌نویسی وب</h2>
-                                            <p>Python & JavaScript</p>
 
-                                            <a href="web_class" type="button" class="btn btn-red">ورود به دوره</a>
+
+                                            <a href="https://cs50x.ir/winter/static/main/CS50-Web-Programming-Guidlines.pdf" type="button" class="btn btn-red">راهنمای دوره وب</a>
                                         </div>
                                     </div>
                                 </li>
                             {% else %}
-                                <li class="splide__slide">
-                                    <div class="box">
-                                        <img src="static/main/images/web.png" alt="" />
-                                        <div class="contents">
-                                            <hr />
-                                            <h2>برنامه‌نویسی وب</h2>
-                                            <p style="color: #a51c30;">شما در این دوره ثبت‌نام نکرده‌اید</p>
 
-                                            <a href="https://cs50x.ir/winter/web" type="button" class="btn btn-red" style="background-color: green;">ثبت‌نام</a>
-                                        </div>
-                                    </div>
-                                </li>
                             {% endif %}
                             {% if request.user.ai %}
                                 <li class="splide__slide">
                                     <div class="box">
                                         <img src="static/main/images/ai.png" alt="" />
                                         <div class="contents">
-                                            <hr />
-                                            <h5>هوش مصنوعی</h5>
-                                            <p>AI With Python</p>
 
-                                            <a href="AI_class" type="button" class="btn btn-red">ورود به دوره</a>
+
+                                            <a href="https://cs50x.ir/winter/static/main/CS50x-AI-Guidlines.pdf" type="button" class="btn btn-red">راهنمای دوره هوش مصنوعی</a>
                                         </div>
                                     </div>
                                 </li>
                             {% else %}
-                                <li class="splide__slide">
-                                    <div class="box">
-                                        <img src="static/main/images/ai.png" alt="" />
-                                        <div class="contents">
-                                            <hr />
-                                            <h5>هوش مصنوعی</h5>
-                                            <p style="color: #a51c30;">شما در این دوره ثبت‌نام نکرده‌اید</p>
 
-                                            <a href="https://cs50x.ir/winter/ai" type="button" class="btn btn-red" style="background-color: green;">ثبت‌نام</a>
-                                        </div>
-                                    </div>
-                                </li>
                             {% endif %}
                             {% if request.user.android %}
                                 <li class="splide__slide">
                                     <div class="box">
                                         <img src="static/main/images/android.png" alt="" />
                                         <div class="contents">
-                                            <hr />
-                                            <h5>دوره اندروید</h5>
-                                            <p>Android with Kotlin </p>
 
-                                            <a href="android_class" type="button" class="btn btn-red">ورود به دوره</a>
+
+                                            <a href="" type="button" class="btn btn-red">راهنمای دوره اندروید</a>
                                         </div>
                                     </div>
                                 </li>
                             {% else %}
-                                 <li class="splide__slide">
-                                    <div class="box">
-                                        <img src="static/main/images/android.png" alt="" />
-                                        <div class="contents">
-                                            <hr />
-                                            <h5>دوره اندروید</h5>
-                                            <p style="color: #a51c30;">شما در این دوره ثبت‌نام نکرده‌اید</p>
-
-                                            <a href="https://cs50x.ir/winter/android" type="button" class="btn btn-red" style="background-color: green;">ثبت‌نام</a>
-                                        </div>
-                                    </div>
-                                </li>
+                              
                             {% endif %}
                             </ul>
                         </div>
