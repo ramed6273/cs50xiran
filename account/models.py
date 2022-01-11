@@ -39,7 +39,7 @@ class User(AbstractBaseUser):
     web = models.BooleanField(default=False, verbose_name='کلاس وب')
     ai = models.BooleanField(default=False, verbose_name='کلاس هوش مصنوعی')
     field = models.CharField('رشته تحصیلی', null=True, max_length=100)
-    age = models.PositiveIntegerField('سن', null=True)
+    age = models..CharField('سن',  max_length=300, null=True)
     address = models.TextField('ادرس', null=True)
     city = models.CharField('شهر', max_length=100, null=True)
     rezume = models.CharField('لینک رزومه', max_length=300, null=True, blank=True)
