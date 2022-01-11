@@ -363,7 +363,9 @@ def androidins(request):
         'discount': Discount.objects.get(product=product),
         'setting_android': setting_android
     })
-
+def android_training(request):
+    context = {}
+    return render(request, 'home/android/training.html', context)
 
 
 def pack(request):
