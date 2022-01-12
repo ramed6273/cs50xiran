@@ -49,7 +49,7 @@ class UserAdmin(BaseUserAdmin):
     fieldsets = (
         (None, {'fields': (
             'phone', 'name', 'last_name', 'email', 'password', 'android', 'ai', 'web', 'is_active', 'field',
-            'age', 'address', 'city', 'rezume', 'postal_code', 'linked_in', 'is_admin')}),
+            'age', 'address', 'city', 'rezume', 'postal_code', 'linked_in', 'static_phone', 'is_admin')}),
     )
 
     add_fieldsets = (
