@@ -324,7 +324,7 @@ class Migration(migrations.Migration):
                 ('description', models.CharField(max_length=1000, verbose_name='متن کوتاه جلسه')),
                 ('session_status', models.BooleanField(default=False, verbose_name='انتشار جلسه')),
                 ('time', models.IntegerField(verbose_name='زمان هر جلسه بر حسب دقیقه')),
-                ('text', ckeditor.fields.RichTextField(verbose_name='متن توضیحات جلسه')),
+                ('text', models.CharField(blank=True, max_length=500, null=True, verbose_name='لینک خلاصه متن')),
                 ('question', ckeditor.fields.RichTextField(blank=True, null=True, verbose_name='متن سوال و جواب')),
                 ('probelm_solve', models.CharField(blank=True, max_length=500, null=True, verbose_name='لینک کلاس رفع اشکال')),
                 ('slide_download', models.CharField(blank=True, max_length=500, null=True, verbose_name='لینک دانلود اسلاید')),
