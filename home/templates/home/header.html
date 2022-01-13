@@ -25,6 +25,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#gallery">گالری</a>
                     </li>
+                    {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashbord" style="color: orangered;">پنل کاربری</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="accounts/login" style="color: orangered;">ورود</a>
+                    </li>
+                    {% endif %}
 <!--                     <li class="nav-item">
                         <a class="nav-link" href="https://cs50x.ir/aboutus">درباره ما</a>
                     </li> -->
