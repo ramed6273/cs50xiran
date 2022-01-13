@@ -93,7 +93,7 @@ class Customer(models.Model):
     orders = models.ManyToManyField("Order", blank=True, related_name="orders")
 
     def __str__(self):
-        return self.firstname
+        return f"{self.email} - {self.firstname} {self.lastname}"
 
 class Product(models.Model):
     TYPE_CHOICES = (
