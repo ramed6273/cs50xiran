@@ -41,7 +41,7 @@ class Web_sessions(models.Model):
     description = models.CharField("متن کوتاه جلسه", max_length=1000)
     session_status = models.BooleanField("انتشار جلسه", default=False)
     time = models.IntegerField("زمان هر جلسه بر حسب دقیقه")
-    text = RichTextField("متن توضیحات جلسه")
+    text = models.CharField('لینک خلاصه متن', max_length=500, null=True, blank=True)
     question = RichTextField("متن سوال و جواب", blank=True, null=True)
     probelm_solve = models.CharField('لینک کلاس رفع اشکال', max_length=500, null=True, blank=True)
     slide_download = models.CharField('لینک دانلود اسلاید', max_length=500, null=True, blank=True)
