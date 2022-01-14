@@ -52,7 +52,7 @@ urlpatterns = [
     path("android_sessions/<int:session_id>/question", android_class_sessions_question,
          name="android_class_sessions_question"),
     # password urls
-    # path('change_password', change_password, name="change_password"),
+    path('change_password', change_password, name="change_password"),
     # path('password_reset', views.PasswordResetView.as_view(), name='password_reset'),
     # path('reset/done', views.PasswordResetDoneView.as_view(), name='password_reset_done'),
     # path('reset/<uidb64>/<token>', views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
