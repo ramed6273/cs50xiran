@@ -661,7 +661,7 @@ def password_reset_request(request):
             associated_users = User.objects.filter(Q(email=data))
             if associated_users.exists():
                 for user in associated_users:
-                    subject = "Password Reset Requested"
+                    subject = "درخواست تغییر رمزعبور | CS50x Iran"
                     email_template_name = "password/password_reset_email.txt"
                     c = {
                         "email": user.email,
