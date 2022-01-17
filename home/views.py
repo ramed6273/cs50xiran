@@ -1,3 +1,5 @@
+from django.db.models import Q
+from django.contrib.auth.hashers import make_password
 from django.contrib import messages
 from django.shortcuts import render, redirect, HttpResponse, get_object_or_404, HttpResponseRedirect, reverse
 from django.contrib.auth import authenticate, login, logout
@@ -13,7 +15,7 @@ from django.core.mail import send_mail
 from django_zarinpal.exceptions import ZarinpalException
 from django.core.validators import RegexValidator
 from django.contrib.auth.models import User
-from .forms import UpdateAccount
+from .forms import UpdateAccount, ResetPasswordForm
 from django.contrib.auth.forms import PasswordChangeForm, PasswordResetForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth import get_user_model
