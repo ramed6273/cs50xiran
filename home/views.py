@@ -662,7 +662,7 @@ def password_reset_request(request):
                     subject = "Password Reset Requested"
                     email_template_name = "password/password_reset_email.txt"
                     c = {
-                        "email": settings.EAMIL_ADDRESS,
+                        "email": user.email,
                         'domain': 'cs50x.ir',
                         'site_name': 'Website',
                         "uid": urlsafe_base64_encode(force_bytes(user.pk)),
