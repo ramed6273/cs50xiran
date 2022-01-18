@@ -22,12 +22,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="stylesheet" href="https://cs50x.ir/winter/static/main/css/splide.min.css" />
         <link rel="stylesheet" href="https://cs50x.ir/winter/static/main/css/style.css?v=1.5" />
         <link rel="stylesheet" href="https://cs50x.ir/winter/static/main/css/responsive.css?v=1.5" />
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
        <!---start GOFTINO code--->
 <script type="text/javascript">
   !function(){var i="i3Rl9r",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();
 </script>
 <!---end GOFTINO code--->
         <style>
+            .swal2-loader {
+                border-color: #a51c30 transparent #a51c30 transparent;
+            }
             .close:hover,
 .close:focus {
   color: #000;
@@ -113,6 +117,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="row content align-items-center d-lg-none d-block">
                             <div class="col-lg-12 order-lg-1 order-2">
                                  <div class="video-box text-center">
+                                     <script>
+                                         let timerInterval
+Swal.fire({
+
+  html: 'ویدئو درحال بارگزاری است. لطفا منتظر بمانید',
+  timer: 4500,
+  timerProgressBar: true,
+  didOpen: () => {
+    Swal.showLoading()
+    const b = Swal.getHtmlContainer().querySelector('b')
+    timerInterval = setInterval(() => {
+      b.textContent = Swal.getTimerLeft()
+    }, 100)
+  },
+  willClose: () => {
+    clearInterval(timerInterval)
+  }
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log('I was closed by the timer')
+  }
+})
+                                     </script>
 <iframe src="{{ session.first_video_link }}" style="border:0 #ffffff none;" height="300px" width="300px" allowfullscreen></iframe>
                                     <img class="dots" src="https://cs50x.ir/winter/static/main/images/dunddun!!.png" alt="" />
                                 </div>
