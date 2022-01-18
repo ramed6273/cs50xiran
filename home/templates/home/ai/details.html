@@ -29,6 +29,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 <!---end GOFTINO code--->
         <style>
+            .swal2-loader {
+                border-color: #a51c30 transparent #a51c30 transparent;
+            }
             .close:hover,
 .close:focus {
   color: #000;
@@ -121,7 +124,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 Swal.fire({
 
   html: 'ویدئو درحال بارگزاری است. لطفا منتظر بمانید',
-  timer: 6000,
+  timer: 4500,
   timerProgressBar: true,
   didOpen: () => {
     Swal.showLoading()
