@@ -159,9 +159,9 @@ Swal.fire({
                                             <a class="btn-red btn" href="{% url 'web_class_sessions_question' session_id=session.id %}">پروژه</a><br class="d-lg-none d-block" />
                                             <a class="btn btn-red" href="{{ session.slide_download }}">دانلود اسلاید</a><br class="d-lg-none d-block" /><br class="d-lg-block d-none" /><br class="d-lg-block d-none" />
                                             {% if session.id == 2 %}
-                                            <a class="btn-red btn" href="{{ session.file_download }}">سورس کدها</a>
-                                            {% else %}
                                             <a class="btn-red btn" href="{{ session.file_download }}">نصب گیت</a>
+                                            {% else %}
+                                            <a class="btn-red btn" href="{{ session.file_download }}">سورس کدها</a>
                                             {% endif %}
 
                                         </div>
