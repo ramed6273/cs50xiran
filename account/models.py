@@ -35,6 +35,7 @@ class User(AbstractBaseUser):
     objects = MyUserManager()
     is_active = models.BooleanField(default=True, verbose_name='فعال/غیرفعال')
     is_admin = models.BooleanField(default=False, verbose_name='دسترسی ادمین')
+    deaf = models.BooleanField(default=False, verbose_name='ناشنوا')
     android = models.BooleanField(default=False, verbose_name='کلاس اندروید')
     web = models.BooleanField(default=False, verbose_name='کلاس وب')
     ai = models.BooleanField(default=False, verbose_name='کلاس هوش مصنوعی')
