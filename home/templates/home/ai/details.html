@@ -106,9 +106,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                        <div class="row content align-items-center d-lg-block d-none">
                             <div class="col-lg-12 order-lg-1 order-2">
                                  <div class="video-box text-center">
-                                    
+                                    {% if not request.user.deaf %}
 <iframe src="{{ session.first_video_link }}" style="border:0 #ffffff none;" height="400px" width="600px" allowfullscreen></iframe>
-
+                                {% else %}
+                                     <h4>{{ request.user.name }} عزیز این ویدئو برای شما مناسب سازی شده است</h4><br /><br />
+                                     <iframe src="{{ session.first_video_link }}" style="border:0 #ffffff none;" height="400px" width="600px" allowfullscreen></iframe>
+                                     
+                                     {% endif %}
 
 
 
@@ -143,8 +147,14 @@ Swal.fire({
   }
 })
                                      </script>
+                                     {% if not request.user.deaf %}
 <iframe src="{{ session.first_video_link }}" style="border:0 #ffffff none;" height="300px" width="300px" allowfullscreen></iframe>
-                                    <img class="dots" src="https://cs50x.ir/winter/static/main/images/dunddun!!.png" alt="" />
+                                     {% else %}
+                                     <h4>{{ request.user.name }} عزیز این ویدئو برای شما مناسب سازی شده است</h4><br /><br />
+                                     <iframe src="{{ session.first_video_link }}" style="border:0 #ffffff none;" height="300px" width="300px" allowfullscreen></iframe>
+                                     
+                                     {% endif %}
+<!--                                     <img class="dots" src="https://cs50x.ir/winter/static/main/images/dunddun!!.png" alt="" /> -->
                                 </div>
                             </div>
                         </div>
